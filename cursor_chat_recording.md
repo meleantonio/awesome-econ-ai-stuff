@@ -14,3 +14,7 @@ Assistant actions:
 - Created missing skill definitions: stata-regression, python-panel-data, latex-tables, econ-visualization.
 - Added a GitHub Actions pre-build step to copy SKILL.md to index.md.
 - Normalized markdown spacing to satisfy lint rules.
+- Added debug instrumentation to skill page layout to trace rendering and stylesheet loading.
+- Added inline debug instrumentation to the r-econometrics skill content for production logging.
+- Added a homepage debug probe to validate client logging pipeline.
+- Updated the deploy workflow to inject `layout: skill` into generated index pages.

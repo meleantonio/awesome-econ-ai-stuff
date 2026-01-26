@@ -199,3 +199,9 @@ install.packages(c("fixest", "modelsummary", "tidyverse"))
 
 ### v1.0.0
 - Initial release with IV, DiD, RDD support
+
+<script>
+// #region agent log
+fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'skills/analysis/r-econometrics/SKILL.md:204',message:'inline_skill_script_rendered',data:{href:window.location.href,hasNav:!!document.querySelector('.nav'),styleHrefs:Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map((link)=>link.href)},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-inline',hypothesisId:'D'})}).catch(()=>{});
+// #endregion agent log
+</script>

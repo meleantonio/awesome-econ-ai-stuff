@@ -32,17 +32,22 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-          import shutil
+          import re
 
           skills_root = Path("skills")
           if skills_root.exists():
               for skill_file in skills_root.rglob("SKILL.md"):
+                  text = skill_file.read_text(encoding="utf-8")
+                  if text.startswith("---"):
+                      end = text.find("\n---", 3)
+                      if end != -1:
+                          front = text[3:end].strip("\n")
+                          if not re.search(r"^layout:\s*", front, flags=re.MULTILINE):
+                              front = f"{front}\nlayout: skill"
+                          text = f"---\n{front}\n---{text[end+4:]}"
                   index_file = skill_file.parent / "index.md"
-                  if (not index_file.exists()) or (
-                      skill_file.stat().st_mtime > index_file.stat().st_mtime
-                  ):
-                      shutil.copy2(skill_file, index_file)
-                      print(f"Copied {skill_file} -> {index_file}")
+                  index_file.write_text(text, encoding="utf-8")
+                  print(f"Generated {index_file} from {skill_file}")
           PY
 
       - name: Build with Jekyll
