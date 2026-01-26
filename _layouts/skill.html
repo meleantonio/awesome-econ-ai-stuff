@@ -72,5 +72,19 @@ layout: null
     </footer>
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script>
+        // #region agent log
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:96',message:'skill_layout_rendered',data:{pageTitle:'{{ page.title | default: page.name | default: page.slug }}',pageUrl:'{{ page.url }}',baseUrl:'{{ site.baseurl }}',href:window.location.href},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'A'})}).catch(()=>{});
+        // #endregion agent log
+        // #region agent log
+        const skillCssLink = document.querySelector('link[rel="stylesheet"]');
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:99',message:'skill_stylesheet_link',data:{cssHref:skillCssLink ? skillCssLink.href : null,baseUrl:'{{ site.baseurl }}'},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion agent log
+        // #region agent log
+        const skillContent = document.querySelector('.skill-content');
+        const computedBg = window.getComputedStyle(document.body).backgroundColor;
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:103',message:'skill_dom_and_style',data:{hasSkillContent:!!skillContent,bodyBg:computedBg},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'B'})}).catch(()=>{});
+        // #endregion agent log
+    </script>
 </body>
 </html>
