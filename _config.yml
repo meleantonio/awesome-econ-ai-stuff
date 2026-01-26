@@ -1,7 +1,7 @@
 title: Awesome Econ AI Stuff
 description: AI skills for economists - from data analysis to paper writing
 url: https://meleantonio.github.io/awesome-econ-ai-stuff
-baseurl: ""
+baseurl: "/awesome-econ-ai-stuff"
 
 # Build settings
 markdown: kramdown
