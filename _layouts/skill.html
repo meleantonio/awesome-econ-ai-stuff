@@ -45,6 +45,9 @@ layout: null
         <section>
             <div class="container">
                 <div class="skill-content">
+                    <div style="margin-bottom: 2rem; display: flex; justify-content: flex-end;">
+                        <button id="download-skill-btn" class="btn btn-secondary">📥 Download SKILL.md</button>
+                    </div>
                     {{ content }}
                 </div>
             </div>
@@ -71,7 +74,14 @@ layout: null
         </div>
     </footer>
 
+    <!-- JSZip library for zip file creation (needed for download functionality) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        // Make baseurl available to JavaScript
+        window.siteBaseurl = '{{ site.baseurl }}';
+    </script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/download.js"></script>
     <script>
         // #region agent log
         fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:96',message:'skill_layout_rendered',data:{pageTitle:'{{ page.title | default: page.name | default: page.slug }}',pageUrl:'{{ page.url }}',baseUrl:'{{ site.baseurl }}',href:window.location.href},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'A'})}).catch(()=>{});
