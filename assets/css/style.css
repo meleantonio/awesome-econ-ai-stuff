@@ -356,6 +356,56 @@ section {
     padding: var(--space-3xl) 0;
 }
 
+.page-content {
+    padding-top: calc(80px + var(--space-2xl));
+}
+
+.skill-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-content h1,
+.skill-content h2,
+.skill-content h3,
+.skill-content h4,
+.skill-content h5,
+.skill-content h6 {
+    margin: var(--space-xl) 0 var(--space-md);
+}
+
+.skill-content p {
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+.skill-content ul,
+.skill-content ol {
+    margin: 0 0 var(--space-md) var(--space-lg);
+}
+
+.skill-content li {
+    margin-bottom: var(--space-xs);
+}
+
+.skill-content code {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+.skill-content pre {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md);
+    overflow-x: auto;
+    margin: var(--space-md) 0;
+}
+
+.skill-content pre code {
+    color: var(--text-primary);
+}
+
 .section-title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;

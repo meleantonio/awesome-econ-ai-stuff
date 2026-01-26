@@ -28,6 +28,23 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Generate skill index pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import shutil
+
+          skills_root = Path("skills")
+          if skills_root.exists():
+              for skill_file in skills_root.rglob("SKILL.md"):
+                  index_file = skill_file.parent / "index.md"
+                  if (not index_file.exists()) or (
+                      skill_file.stat().st_mtime > index_file.stat().st_mtime
+                  ):
+                      shutil.copy2(skill_file, index_file)
+                      print(f"Copied {skill_file} -> {index_file}")
+          PY
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

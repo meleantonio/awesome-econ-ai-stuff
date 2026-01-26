@@ -1,0 +1,76 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: page.name | default: page.slug }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
+    {% seo %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="{{ site.baseurl }}/" class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Awesome Econ AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="{{ site.baseurl }}/#skills">Skills</a>
+                <a href="{{ site.baseurl }}/#workflow">Workflow</a>
+                <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit Skill</a>
+                <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section>
+            <div class="container">
+                <div class="skill-content">
+                    {{ content }}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📊</span>
+                    <span>Awesome Econ AI Stuff</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff">GitHub</a>
+                    <a href="{{ site.baseurl }}/CONTRIBUTING.md">Contribute</a>
+                    <a href="{{ site.baseurl }}/LICENSE">License (CC0)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with ❤️ for the economics research community</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
+</html>
