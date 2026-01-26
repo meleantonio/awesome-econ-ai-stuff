@@ -24,16 +24,13 @@ collections:
 # Defaults
 defaults:
   - scope:
-      path: ""
-      type: "skills"
+      path: "skills"
     values:
       layout: "skill"
 
 # Exclude from build
 exclude:
   - README.md
-  - CONTRIBUTING.md
-  - LICENSE
   - Gemfile
   - Gemfile.lock
   - node_modules
