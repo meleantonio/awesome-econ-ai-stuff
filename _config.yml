@@ -24,7 +24,8 @@ collections:
 # Defaults
 defaults:
   - scope:
-      path: "skills"
+      path: ""
+      type: "skills"
     values:
       layout: "skill"
 

@@ -29,7 +29,7 @@
             </a>
             <div class="nav-links">
                 <a href="#skills">Skills</a>
-                <a href="#workflow">Workflow</a>
+                <a href="#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/pages/submit.html" class="nav-cta">Submit Skill</a>
                 <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -57,12 +57,12 @@
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-value">15+</span>
+                    <span class="stat-value">{{ site.skills | size }}+</span>
                     <span class="stat-label">Skills</span>
                 </div>
                 <div class="stat">
                     <span class="stat-value">7</span>
-                    <span class="stat-label">Workflow Stages</span>
+                    <span class="stat-label">Categories</span>
                 </div>
                 <div class="stat">
                     <span class="stat-value">4+</span>
@@ -93,56 +93,10 @@
         </div>
     </header>
 
-    <!-- Workflow Section -->
-    <section id="workflow" class="workflow-section">
-        <div class="container">
-            <h2 class="section-title">Your Research, <span class="gradient-text">Supercharged</span></h2>
-            <p class="section-description">Skills organized by every stage of the economic research workflow</p>
-            
-            <div class="workflow-grid">
-                <a href="#ideation" class="workflow-card">
-                    <div class="workflow-icon">💡</div>
-                    <h3>Ideation</h3>
-                    <p>Generate research questions and hypotheses</p>
-                </a>
-                <a href="#literature" class="workflow-card">
-                    <div class="workflow-icon">📚</div>
-                    <h3>Literature</h3>
-                    <p>Search and synthesize existing research</p>
-                </a>
-                <a href="#theory" class="workflow-card">
-                    <div class="workflow-icon">📐</div>
-                    <h3>Theory</h3>
-                    <p>Write mathematical models in LaTeX</p>
-                </a>
-                <a href="#data" class="workflow-card">
-                    <div class="workflow-icon">📊</div>
-                    <h3>Data</h3>
-                    <p>Collect, clean, and transform data</p>
-                </a>
-                <a href="#analysis" class="workflow-card">
-                    <div class="workflow-icon">🔬</div>
-                    <h3>Analysis</h3>
-                    <p>Run econometric analyses (IV, DiD, RDD)</p>
-                </a>
-                <a href="#writing" class="workflow-card">
-                    <div class="workflow-icon">📝</div>
-                    <h3>Writing</h3>
-                    <p>Draft papers and respond to referees</p>
-                </a>
-                <a href="#communication" class="workflow-card">
-                    <div class="workflow-icon">🎯</div>
-                    <h3>Communication</h3>
-                    <p>Create presentations and visualizations</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Skills Catalog -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Skills Catalog</h2>
+            <h2 class="section-title">Your Research, <span class="gradient-text">Supercharged</span></h2>
             <p class="section-description">Ready-to-use skills for your AI coding assistant</p>
 
             <!-- Filter Tabs -->
@@ -157,232 +111,67 @@
                 <button class="filter-tab" data-filter="communication">🎯 Communication</button>
             </div>
 
-            <!-- Skills Grid -->
+            <!-- Skills Grid - Dynamically generated from skill collection -->
             <div class="skills-grid">
-                <!-- Analysis Skills -->
-                <article class="skill-card" data-category="analysis">
-                    <div class="skill-header">
-                        <span class="skill-icon">🔬</span>
-                        <span class="skill-stage">Analysis</span>
-                    </div>
-                    <h3 class="skill-title">r-econometrics</h3>
-                    <p class="skill-description">Run IV, DiD, and RDD analyses in R with proper diagnostics and robust standard errors.</p>
-                    <div class="skill-tags">
-                        <span class="tag">R</span>
-                        <span class="tag">fixest</span>
-                        <span class="tag">causal inference</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/analysis/r-econometrics/" class="skill-link">View →</a>
-                    </div>
-                </article>
+                {% for skill in site.skills %}
+                    {% if skill.name and skill.workflow_stage %}
+                        {% assign category = skill.workflow_stage %}
+                        {% assign skill_icon = "🔬" %}
+                        {% assign skill_label = "Analysis" %}
+                        
+                        {% case category %}
+                            {% when 'ideation' %}
+                                {% assign skill_icon = "💡" %}
+                                {% assign skill_label = "Ideation" %}
+                            {% when 'literature' %}
+                                {% assign skill_icon = "📚" %}
+                                {% assign skill_label = "Literature" %}
+                            {% when 'theory' %}
+                                {% assign skill_icon = "📐" %}
+                                {% assign skill_label = "Theory" %}
+                            {% when 'data' %}
+                                {% assign skill_icon = "📊" %}
+                                {% assign skill_label = "Data" %}
+                            {% when 'analysis' %}
+                                {% assign skill_icon = "🔬" %}
+                                {% assign skill_label = "Analysis" %}
+                            {% when 'writing' %}
+                                {% assign skill_icon = "📝" %}
+                                {% assign skill_label = "Writing" %}
+                            {% when 'communication' %}
+                                {% assign skill_icon = "🎯" %}
+                                {% assign skill_label = "Communication" %}
+                        {% endcase %}
 
-                <article class="skill-card" data-category="analysis">
-                    <div class="skill-header">
-                        <span class="skill-icon">🔬</span>
-                        <span class="skill-stage">Analysis</span>
-                    </div>
-                    <h3 class="skill-title">stata-regression</h3>
-                    <p class="skill-description">Run regression analyses in Stata with publication-ready output tables.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Stata</span>
-                        <span class="tag">regression</span>
-                        <span class="tag">esttab</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/analysis/stata-regression/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <article class="skill-card" data-category="analysis">
-                    <div class="skill-header">
-                        <span class="skill-icon">🔬</span>
-                        <span class="skill-stage">Analysis</span>
-                    </div>
-                    <h3 class="skill-title">python-panel-data</h3>
-                    <p class="skill-description">Panel data analysis with Python using linearmodels and pandas.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">pandas</span>
-                        <span class="tag">panel data</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/analysis/python-panel-data/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <!-- Data Skills -->
-                <article class="skill-card" data-category="data">
-                    <div class="skill-header">
-                        <span class="skill-icon">📊</span>
-                        <span class="skill-stage">Data</span>
-                    </div>
-                    <h3 class="skill-title">stata-data-cleaning</h3>
-                    <p class="skill-description">Clean and transform messy data in Stata with reproducible workflows.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Stata</span>
-                        <span class="tag">data cleaning</span>
-                        <span class="tag">transformation</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/data/stata-data-cleaning/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <article class="skill-card" data-category="data">
-                    <div class="skill-header">
-                        <span class="skill-icon">📊</span>
-                        <span class="skill-stage">Data</span>
-                    </div>
-                    <h3 class="skill-title">api-data-fetcher</h3>
-                    <p class="skill-description">Fetch economic data from FRED, World Bank, and other APIs.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">API</span>
-                        <span class="tag">FRED</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/data/api-data-fetcher/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <!-- Theory Skills -->
-                <article class="skill-card" data-category="theory">
-                    <div class="skill-header">
-                        <span class="skill-icon">📐</span>
-                        <span class="skill-stage">Theory</span>
-                    </div>
-                    <h3 class="skill-title">latex-econ-model</h3>
-                    <p class="skill-description">Write and typeset economic models in LaTeX with proper notation.</p>
-                    <div class="skill-tags">
-                        <span class="tag">LaTeX</span>
-                        <span class="tag">models</span>
-                        <span class="tag">equations</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/theory/latex-econ-model/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <!-- Writing Skills -->
-                <article class="skill-card" data-category="writing">
-                    <div class="skill-header">
-                        <span class="skill-icon">📝</span>
-                        <span class="skill-stage">Writing</span>
-                    </div>
-                    <h3 class="skill-title">academic-paper-writer</h3>
-                    <p class="skill-description">Draft economics papers with proper structure and academic style.</p>
-                    <div class="skill-tags">
-                        <span class="tag">LaTeX</span>
-                        <span class="tag">academic writing</span>
-                        <span class="tag">papers</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/writing/academic-paper-writer/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <article class="skill-card" data-category="writing">
-                    <div class="skill-header">
-                        <span class="skill-icon">📝</span>
-                        <span class="skill-stage">Writing</span>
-                    </div>
-                    <h3 class="skill-title">latex-tables</h3>
-                    <p class="skill-description">Generate publication-ready regression tables in LaTeX.</p>
-                    <div class="skill-tags">
-                        <span class="tag">LaTeX</span>
-                        <span class="tag">tables</span>
-                        <span class="tag">regression</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/writing/latex-tables/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <!-- Communication Skills -->
-                <article class="skill-card" data-category="communication">
-                    <div class="skill-header">
-                        <span class="skill-icon">🎯</span>
-                        <span class="skill-stage">Communication</span>
-                    </div>
-                    <h3 class="skill-title">beamer-presentation</h3>
-                    <p class="skill-description">Create academic presentations in Beamer with professional themes.</p>
-                    <div class="skill-tags">
-                        <span class="tag">LaTeX</span>
-                        <span class="tag">Beamer</span>
-                        <span class="tag">slides</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/communication/beamer-presentation/" class="skill-link">View →</a>
-                    </div>
-                </article>
-
-                <article class="skill-card" data-category="communication">
-                    <div class="skill-header">
-                        <span class="skill-icon">🎯</span>
-                        <span class="skill-stage">Communication</span>
-                    </div>
-                    <h3 class="skill-title">econ-visualization</h3>
-                    <p class="skill-description">Create publication-quality charts and graphs for economics papers.</p>
-                    <div class="skill-tags">
-                        <span class="tag">R</span>
-                        <span class="tag">ggplot2</span>
-                        <span class="tag">visualization</span>
-                    </div>
-                    <div class="skill-footer">
-                        <div class="compatibility">
-                            <span title="Claude Code">🤖</span>
-                            <span title="Cursor">⌨️</span>
-                            <span title="Gemini">✨</span>
-                        </div>
-                        <a href="skills/communication/econ-visualization/" class="skill-link">View →</a>
-                    </div>
-                </article>
+                        <article class="skill-card" data-category="{{ category }}">
+                            <div class="skill-header">
+                                <span class="skill-icon">{{ skill_icon }}</span>
+                                <span class="skill-stage">{{ skill_label }}</span>
+                            </div>
+                            <h3 class="skill-title">{{ skill.name }}</h3>
+                            <p class="skill-description">{{ skill.description }}</p>
+                            <div class="skill-tags">
+                                {% for tag in skill.tags limit:3 %}
+                                    <span class="tag">{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    {% if skill.compatibility contains 'claude-code' %}
+                                        <span title="Claude Code">🤖</span>
+                                    {% endif %}
+                                    {% if skill.compatibility contains 'cursor' %}
+                                        <span title="Cursor">⌨️</span>
+                                    {% endif %}
+                                    {% if skill.compatibility contains 'gemini-cli' or skill.compatibility contains 'codex' %}
+                                        <span title="Gemini">✨</span>
+                                    {% endif %}
+                                </div>
+                                <a href="{{ skill.url | relative_url }}" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    {% endif %}
+                {% endfor %}
             </div>
 
             <div class="skills-cta">
