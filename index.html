@@ -52,7 +52,8 @@
             </p>
             <div class="hero-actions">
                 <a href="#skills" class="btn btn-primary">Browse Skills</a>
-                <a href="#quick-start" class="btn btn-secondary">Quick Start</a>
+                <a href="#quick-start" class="btn btn-secondary">IDE Quick Start</a>
+                <button id="download-all-btn" class="btn btn-secondary">📦 Download All Skills</button>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -299,7 +300,14 @@ git clone https://github.com/.../r-econometrics ~/.claude/skills/r-econometrics
         </div>
     </footer>
 
+    <!-- JSZip library for zip file creation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        // Make baseurl available to JavaScript
+        window.siteBaseurl = '{{ site.baseurl }}';
+    </script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/download.js"></script>
     <script>
         // #region agent log
         fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:512',message:'homepage_log_probe',data:{href:window.location.href,styleHrefs:Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map((link)=>link.href)},timestamp:Date.now(),sessionId:'debug-session',runId:'homepage-probe',hypothesisId:'E'})}).catch(()=>{});

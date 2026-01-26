@@ -64,3 +64,19 @@ Assistant actions:
   - `_skills/communication/econ-visualization/index.md`
   - `_skills/writing/latex-tables/index.md`
 - Updated `_config.yml` defaults to scope to collection type instead of path
+## 2026-01-26 (Evening)
+
+User request:
+- On the landing page, add a button that allows to download all the skills at once, in a zip file, with the directory structure as is in the repo.
+- Add a button to each skill page that allows to download the individual SKILL.md file.
+
+Assistant actions:
+- Created `assets/js/download.js` with functionality to:
+  - Download all skills as a zip file preserving directory structure
+  - Download individual SKILL.md files from skill pages
+- Added JSZip library (CDN) to both `index.html` and `_layouts/skill.html` for zip file creation
+- Added "Download All Skills" button to hero section on landing page (`index.html`)
+- Added "Download SKILL.md" button to skill pages (`_layouts/skill.html`)
+- Implemented base URL detection for proper file fetching in Jekyll environment
+- Made `site.baseurl` available to JavaScript via `window.siteBaseurl` variable
+- Both buttons use existing button styles (`.btn`, `.btn-secondary`) for consistent design
