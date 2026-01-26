@@ -37,3 +37,30 @@ Assistant actions:
   - Updated all submit.html links to use `{{ site.baseurl }}/pages/submit.html` (lines 31, 387, 486)
   - Updated JS link to use `{{ site.baseurl }}/assets/js/main.js`
   - Now the home link correctly points to `https://meleantonio.github.io/awesome-econ-ai-stuff/` instead of the root domain
+
+---
+
+## 2026-01-26 (Skills Catalog Refactoring)
+
+User request:
+- Remove the non-functional workflow section from index.html (clicking workflow-card items did nothing)
+- Keep the Skills Catalog section but rename it to "Your Research, Supercharged!" with the same gradient styling as the old workflow section title
+- Automatically generate skill cards based on SKILL.md files, categorizing them intelligently based on `workflow_stage` frontmatter
+
+Assistant actions:
+- Removed the workflow section (lines 95-139) from index.html
+- Updated Skills Catalog section title to use "Your Research, Supercharged" with gradient-text styling
+- Changed navigation link from "Workflow" to "Quick Start" since workflow section was removed
+- Updated hero stats to say "Categories" instead of "Workflow Stages" and made skills count dynamic
+- Replaced all hardcoded skill cards with Jekyll Liquid templating that:
+  - Iterates through `site.skills` collection
+  - Reads `workflow_stage` from each skill's YAML frontmatter to determine category
+  - Maps categories to appropriate icons (💡 Ideation, 📚 Literature, 📐 Theory, 📊 Data, 🔬 Analysis, 📝 Writing, 🎯 Communication)
+  - Dynamically generates skill cards with name, description, tags (limited to 3), and compatibility icons
+- Renamed `skills/` directory to `_skills/` for proper Jekyll collection recognition
+- Created missing index.md files for skills that only had SKILL.md:
+  - `_skills/analysis/stata-regression/index.md`
+  - `_skills/analysis/python-panel-data/index.md`
+  - `_skills/communication/econ-visualization/index.md`
+  - `_skills/writing/latex-tables/index.md`
+- Updated `_config.yml` defaults to scope to collection type instead of path
