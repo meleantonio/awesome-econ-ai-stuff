@@ -80,3 +80,16 @@ Assistant actions:
 - Implemented base URL detection for proper file fetching in Jekyll environment
 - Made `site.baseurl` available to JavaScript via `window.siteBaseurl` variable
 - Both buttons use existing button styles (`.btn`, `.btn-secondary`) for consistent design
+
+---
+
+## 2026-01-26 (Fix Duplicate Skill Cards)
+
+User request:
+- Skills appear twice. The same skill is visible in two cards. This is probably due to the existence of an index.md file and a SKILL.md file for every skill. We added index.md because Jekyll seemed unable to use SKILL.md for creating a page in the website. Is there a way to avoid duplication of cards?
+
+Assistant actions:
+- Identified that Jekyll was processing both `index.md` and `SKILL.md` files as collection items, causing duplicate skill cards
+- Added `**/SKILL.md` to the exclude list in `_config.yml` to prevent Jekyll from processing SKILL.md files as collection items
+- Now only `index.md` files are processed as collection items, eliminating duplicates
+- SKILL.md files remain in the repository for download purposes but are not processed by Jekyll
