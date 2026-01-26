@@ -39,6 +39,7 @@ exclude:
   - functions
   - "*.gemspec"
   - "*.gem"
+  - "**/SKILL.md"
 
 # SEO
 author: Awesome Econ AI Stuff Contributors
