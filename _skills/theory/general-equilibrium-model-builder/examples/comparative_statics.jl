@@ -39,6 +39,8 @@ function excess_demand(p::Vector{Float64}, economy::PureExchangeEconomy)
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             x_i = demand_cobb_douglas(p, wealth_i, α_i)
+        else
+            error("Unsupported utility_type: $(economy.utility_type). Only :cobb_douglas is currently implemented.")
         end
         z += x_i - ω_i
     end
@@ -68,6 +70,8 @@ function equilibrium_allocations(p_star::Vector{Float64}, economy::PureExchangeE
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             allocations[i, :] = demand_cobb_douglas(p_star, wealth_i, α_i)
+        else
+            error("Unsupported utility_type: $(economy.utility_type). Only :cobb_douglas is currently implemented.")
         end
     end
     return allocations
@@ -176,8 +180,11 @@ function plot_comparative_statics(results::Dict, title_suffix::String="")
         marker=:circle,
         markersize=4
     )
-    hline!([results[:price_ratio][findfirst(shock .≈ 0)]], 
-           linestyle=:dash, color=:gray, alpha=0.5)
+    idx = findfirst(shock .≈ 0)
+    if idx !== nothing
+        hline!([results[:price_ratio][idx]], 
+               linestyle=:dash, color=:gray, alpha=0.5)
+    end
     vline!([0], linestyle=:dash, color=:gray, alpha=0.5)
     
     # Allocation response - Consumer 1
@@ -259,6 +266,9 @@ function main()
     
     # Solve baseline
     p_base = solve_equilibrium(base_economy)
+    if p_base === nothing
+        error("Failed to solve baseline equilibrium. Check economy specification.")
+    end
     x_base = equilibrium_allocations(p_base, base_economy)
     
     @printf("\nBaseline equilibrium: p* = (%.4f, %.4f)\n", p_base[1], p_base[2])

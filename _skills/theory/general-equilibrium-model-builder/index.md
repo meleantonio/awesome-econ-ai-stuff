@@ -135,6 +135,8 @@ function excess_demand(p, economy::PureExchangeEconomy)
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             x_i = demand_cobb_douglas(p, wealth_i, α_i)
+        else
+            error("Unsupported utility_type: $(economy.utility_type). Only :cobb_douglas is currently implemented.")
         end
         
         z += x_i - ω_i

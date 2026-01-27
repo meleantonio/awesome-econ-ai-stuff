@@ -205,6 +205,8 @@ function equilibrium_allocations(p_star::Vector{Float64}, economy::PureExchangeE
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             allocations[i, :] = demand_cobb_douglas(p_star, wealth_i, α_i)
+        else
+            error("Unsupported utility_type: $(economy.utility_type). Only :cobb_douglas is currently implemented.")
         end
     end
     
@@ -224,6 +226,8 @@ function compute_utilities(allocations::Matrix{Float64}, economy::PureExchangeEc
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             utilities[i] = utility_cobb_douglas(x_i, α_i)
+        else
+            throw(ArgumentError("Unsupported utility_type: $(economy.utility_type). Only :cobb_douglas is currently implemented."))
         end
     end
     
