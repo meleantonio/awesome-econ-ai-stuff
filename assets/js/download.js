@@ -13,18 +13,18 @@ const GITHUB_BRANCH = 'main'; // or 'master', adjust as needed
  * This should match the actual structure in the skills directory
  */
 const SKILLS_LIST = [
-    { path: 'skills/analysis/r-econometrics/SKILL.md', name: 'r-econometrics' },
-    { path: 'skills/analysis/stata-regression/SKILL.md', name: 'stata-regression' },
-    { path: 'skills/analysis/python-panel-data/SKILL.md', name: 'python-panel-data' },
-    { path: 'skills/data/stata-data-cleaning/SKILL.md', name: 'stata-data-cleaning' },
-    { path: 'skills/data/api-data-fetcher/SKILL.md', name: 'api-data-fetcher' },
-    { path: 'skills/theory/latex-econ-model/SKILL.md', name: 'latex-econ-model' },
-    { path: 'skills/writing/academic-paper-writer/SKILL.md', name: 'academic-paper-writer' },
-    { path: 'skills/writing/latex-tables/SKILL.md', name: 'latex-tables' },
-    { path: 'skills/communication/beamer-presentation/SKILL.md', name: 'beamer-presentation' },
-    { path: 'skills/communication/econ-visualization/SKILL.md', name: 'econ-visualization' },
-    { path: 'skills/ideation/research-ideation/SKILL.md', name: 'research-ideation' },
-    { path: 'skills/literature/lit-review-assistant/SKILL.md', name: 'lit-review-assistant' }
+    { path: '_skills/analysis/r-econometrics/SKILL.md', name: 'r-econometrics' },
+    { path: '_skills/analysis/stata-regression/SKILL.md', name: 'stata-regression' },
+    { path: '_skills/analysis/python-panel-data/SKILL.md', name: 'python-panel-data' },
+    { path: '_skills/data/stata-data-cleaning/SKILL.md', name: 'stata-data-cleaning' },
+    { path: '_skills/data/api-data-fetcher/SKILL.md', name: 'api-data-fetcher' },
+    { path: '_skills/theory/latex-econ-model/SKILL.md', name: 'latex-econ-model' },
+    { path: '_skills/writing/academic-paper-writer/SKILL.md', name: 'academic-paper-writer' },
+    { path: '_skills/writing/latex-tables/SKILL.md', name: 'latex-tables' },
+    { path: '_skills/communication/beamer-presentation/SKILL.md', name: 'beamer-presentation' },
+    { path: '_skills/communication/econ-visualization/SKILL.md', name: 'econ-visualization' },
+    { path: '_skills/ideation/research-ideation/SKILL.md', name: 'research-ideation' },
+    { path: '_skills/literature/lit-review-assistant/SKILL.md', name: 'lit-review-assistant' }
 ];
 
 /**
