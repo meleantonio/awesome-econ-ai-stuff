@@ -179,6 +179,8 @@ function equilibrium_allocations(p_star, economy::PureExchangeEconomy)
         if economy.utility_type == :cobb_douglas
             α_i = economy.utility_params[i]
             allocations[i, :] = demand_cobb_douglas(p_star, wealth_i, α_i)
+        else
+            throw(ArgumentError("Unsupported utility_type: $(economy.utility_type) in equilibrium_allocations. Only :cobb_douglas is currently implemented."))
         end
     end
     
@@ -197,6 +199,8 @@ function check_pareto_efficiency(allocations, economy::PureExchangeEconomy)
             push!(mrs_values, mrs_i)
         end
         return mrs_values
+    else
+        throw(ArgumentError("Unsupported utility type: $(economy.utility_type) in check_pareto_efficiency. Only :cobb_douglas is currently implemented."))
     end
 end
 ```
