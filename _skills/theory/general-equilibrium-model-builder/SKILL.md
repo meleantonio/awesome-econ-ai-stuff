@@ -146,22 +146,26 @@ function excess_demand(p, economy::PureExchangeEconomy)
 end
 
 # Solve for equilibrium prices (normalize p_1 = 1)
+# Uses log-price parameterization to ensure prices remain strictly positive
 function solve_equilibrium(economy::PureExchangeEconomy)
-    # Initial guess for prices (excluding numeraire)
-    p0 = ones(economy.n_goods - 1)
+    # Initial guess in log-space (log of ones = zeros)
+    p0 = zeros(economy.n_goods - 1)
     
     # Excess demand for goods 2 to L (Walras' Law implies good 1 clears)
-    function excess_demand_reduced!(F, p_rest)
+    # Reparameterize using log-prices: x = log(p_rest), so p_rest = exp(x)
+    function excess_demand_reduced!(F, x)
+        p_rest = exp.(x)  # Exponentiate to get positive prices
         p = vcat(1.0, p_rest)  # Numeraire p_1 = 1
         z = excess_demand(p, economy)
         F .= z[2:end]
     end
     
-    # Solve z(p) = 0
+    # Solve z(p) = 0 in log-space
     result = nlsolve(excess_demand_reduced!, p0, autodiff=:forward)
     
     if converged(result)
-        p_star = vcat(1.0, result.zero)
+        p_rest_star = exp.(result.zero)  # Convert back from log-space
+        p_star = vcat(1.0, p_rest_star)
         return p_star
     else
         error("Equilibrium solver did not converge")
@@ -191,13 +195,26 @@ end
 function check_pareto_efficiency(allocations, economy::PureExchangeEconomy)
     if economy.utility_type == :cobb_douglas
         # MRS_{12} = (α_1/α_2) * (x_2/x_1) should be equal for all consumers
+        epsilon = 1e-12  # Small threshold for near-zero detection
         mrs_values = []
+        
         for i in 1:economy.n_consumers
             α_i = economy.utility_params[i]
             x_i = allocations[i, :]
-            mrs_i = (α_i[1] / α_i[2]) * (x_i[2] / x_i[1])
-            push!(mrs_values, mrs_i)
+            
+            # Guard against division by zero: use robust denominator
+            # For corner cases with zero consumption, MRS is undefined (set to Inf)
+            denom = max(abs(x_i[1]), epsilon)
+            
+            if abs(x_i[1]) < epsilon
+                # Handle corner case: zero consumption of good 1
+                push!(mrs_values, Inf)
+            else
+                mrs_i = (α_i[1] / α_i[2]) * (x_i[2] / x_i[1])
+                push!(mrs_values, mrs_i)
+            end
         end
+        
         return mrs_values
     else
         throw(ArgumentError("Unsupported utility type: $(economy.utility_type) in check_pareto_efficiency. Only :cobb_douglas is currently implemented."))
