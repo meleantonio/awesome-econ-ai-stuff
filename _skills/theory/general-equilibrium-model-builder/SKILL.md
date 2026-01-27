@@ -193,6 +193,11 @@ end
 
 # Check Pareto efficiency via MRS equality
 function check_pareto_efficiency(allocations, economy::PureExchangeEconomy)
+    # Currently only supports 2-good economies
+    if economy.n_goods != 2
+        throw(ArgumentError("check_pareto_efficiency currently only supports 2-good economies. Got economy.n_goods = $(economy.n_goods)."))
+    end
+    
     if economy.utility_type == :cobb_douglas
         # MRS_{12} = (α_1/α_2) * (x_2/x_1) should be equal for all consumers
         epsilon = 1e-12  # Small threshold for near-zero detection
