@@ -93,3 +93,15 @@ Assistant actions:
 - Added `**/SKILL.md` to the exclude list in `_config.yml` to prevent Jekyll from processing SKILL.md files as collection items
 - Now only `index.md` files are processed as collection items, eliminating duplicates
 - SKILL.md files remain in the repository for download purposes but are not processed by Jekyll
+
+---
+
+## 2026-01-27 (Fix Empty Zip Download)
+
+User request:
+- The Download All Skills button produces an empty zip folder. It should instead contain the entire skills folder.
+
+Assistant actions:
+- Identified the root cause: `SKILLS_LIST` in `download.js` was referencing paths starting with `skills/...` but the actual folder in the repository is `_skills/...` (with underscore prefix)
+- Updated all 12 skill paths in `SKILLS_LIST` from `skills/` to `_skills/` to match the actual folder structure
+- This fix ensures the fetch requests target the correct file paths, allowing the SKILL.md files to be downloaded and added to the zip file
