@@ -202,12 +202,9 @@ function check_pareto_efficiency(allocations, economy::PureExchangeEconomy)
             α_i = economy.utility_params[i]
             x_i = allocations[i, :]
             
-            # Guard against division by zero: use robust denominator
-            # For corner cases with zero consumption, MRS is undefined (set to Inf)
-            denom = max(abs(x_i[1]), epsilon)
-            
-            if abs(x_i[1]) < epsilon
-                # Handle corner case: zero consumption of good 1
+            # Guard against division by zero: check both x_i[1] and α_i[2]
+            if abs(x_i[1]) < epsilon || abs(α_i[2]) < epsilon
+                # Handle corner case: set sentinel value for zero/near-zero consumption
                 push!(mrs_values, Inf)
             else
                 mrs_i = (α_i[1] / α_i[2]) * (x_i[2] / x_i[1])
