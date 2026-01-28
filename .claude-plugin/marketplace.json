@@ -1,0 +1,135 @@
+{
+  "name": "awesome-econ-ai-stuff",
+  "owner": {
+    "name": "Awesome Econ AI Community",
+    "email": "meleantonio@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "AI skills for economists covering the complete research workflow from ideation to publication. Includes tools for econometric analysis (R, Python, Stata), academic writing, data management, and visualization.",
+    "version": "1.0.0",
+    "examples": [
+      {
+        "name": "Run DiD analysis in R",
+        "command": "/r-econometrics"
+      },
+      {
+        "name": "Create publication-ready LaTeX tables",
+        "command": "/latex-tables"
+      },
+      {
+        "name": "Fetch FRED data",
+        "command": "/api-data-fetcher"
+      }
+    ]
+  },
+  "plugins": [
+    {
+      "name": "research-ideation",
+      "description": "Generate research questions from economic phenomena",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/ideation/research-ideation"
+      ]
+    },
+    {
+      "name": "lit-review-assistant",
+      "description": "Search, summarize, and synthesize economics literature",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/literature/lit-review-assistant"
+      ]
+    },
+    {
+      "name": "latex-econ-model",
+      "description": "Write and typeset economic models in LaTeX with proper notation",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/theory/latex-econ-model"
+      ]
+    },
+    {
+      "name": "api-data-fetcher",
+      "description": "Fetch economic data from FRED, World Bank, and other APIs",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/data/api-data-fetcher"
+      ]
+    },
+    {
+      "name": "stata-data-cleaning",
+      "description": "Clean and transform messy data in Stata with reproducible workflows",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/data/stata-data-cleaning"
+      ]
+    },
+    {
+      "name": "r-econometrics",
+      "description": "Run IV, DiD, and RDD analyses in R with proper diagnostics",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/analysis/r-econometrics"
+      ]
+    },
+    {
+      "name": "python-panel-data",
+      "description": "Panel data analysis with Python using linearmodels and pandas",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/analysis/python-panel-data"
+      ]
+    },
+    {
+      "name": "stata-regression",
+      "description": "Run regression analyses in Stata with publication-ready output tables",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/analysis/stata-regression"
+      ]
+    },
+    {
+      "name": "academic-paper-writer",
+      "description": "Draft economics papers with proper structure and academic style",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/writing/academic-paper-writer"
+      ]
+    },
+    {
+      "name": "latex-tables",
+      "description": "Generate publication-ready regression tables in LaTeX",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/writing/latex-tables"
+      ]
+    },
+    {
+      "name": "beamer-presentation",
+      "description": "Create academic presentations in Beamer with professional themes",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/communication/beamer-presentation"
+      ]
+    },
+    {
+      "name": "econ-visualization",
+      "description": "Create publication-quality charts and graphs for economics papers",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./_skills/communication/econ-visualization"
+      ]
+    }
+  ]
+}
