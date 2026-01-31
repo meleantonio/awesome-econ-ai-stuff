@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About AI Coding Agents - Awesome Econ AI Stuff</title>
+    <meta name="description" content="Educational guide to AI coding agents, skills, rules, and configuration files like AGENTS.md and CLAUDE.md for economists.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/learn.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Awesome Econ AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#quick-start">Quick Start</a>
+                <a href="learn.html" class="active">Learn</a>
+                <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="learn-page">
+        <div class="container">
+            <header class="learn-header">
+                <div class="learn-badge">📚 Educational Resource</div>
+                <h1>Understanding <span class="gradient-text">AI Coding Agents</span></h1>
+                <p>A comprehensive guide to AI coding assistants, skills, rules, and how they work together to supercharge your research workflow.</p>
+            </header>
+
+            <nav class="toc">
+                <h3>Contents</h3>
+                <ul>
+                    <li><a href="#what-are-agents">What Are AI Coding Agents?</a></li>
+                    <li><a href="#what-are-skills">What Are Skills?</a></li>
+                    <li><a href="#what-are-rules">What Are Rules?</a></li>
+                    <li><a href="#agents-md-vs-claude-md">AGENTS.md vs CLAUDE.md</a></li>
+                    <li><a href="#skills-vs-subagents">Skills vs Subagents</a></li>
+                    <li><a href="#how-they-work-together">How They Work Together</a></li>
+                    <li><a href="#resources">Resources & Documentation</a></li>
+                </ul>
+            </nav>
+
+            <section id="what-are-agents" class="learn-section">
+                <div class="section-icon">🤖</div>
+                <h2>What Are AI Coding Agents?</h2>
+                
+                <p>AI coding agents are intelligent assistants that can read, understand, and write code. Unlike simple autocomplete tools, these agents can:</p>
+                
+                <ul class="feature-list">
+                    <li><strong>Understand context</strong> — Read your entire project structure, documentation, and existing code</li>
+                    <li><strong>Execute tasks autonomously</strong> — Run commands, create files, and make changes across multiple files</li>
+                    <li><strong>Follow instructions</strong> — Adhere to project-specific conventions and coding standards</li>
+                    <li><strong>Learn from feedback</strong> — Improve based on corrections and preferences you provide</li>
+                </ul>
+
+                <div class="info-card">
+                    <h4>Popular AI Coding Agents</h4>
+                    <div class="tool-list">
+                        <a href="https://docs.anthropic.com/claude-code" class="tool-item" target="_blank">
+                            <span class="tool-icon">🤖</span>
+                            <div>
+                                <strong>Claude Code</strong>
+                                <span>Terminal-based agent from Anthropic</span>
+                            </div>
+                        </a>
+                        <a href="https://cursor.com" class="tool-item" target="_blank">
+                            <span class="tool-icon">⌨️</span>
+                            <div>
+                                <strong>Cursor</strong>
+                                <span>AI-native code editor</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/google-gemini/gemini-cli" class="tool-item" target="_blank">
+                            <span class="tool-icon">✨</span>
+                            <div>
+                                <strong>Gemini CLI</strong>
+                                <span>Google's command-line agent</span>
+                            </div>
+                        </a>
+                        <a href="https://openai.com/codex" class="tool-item" target="_blank">
+                            <span class="tool-icon">🐙</span>
+                            <div>
+                                <strong>OpenAI Codex</strong>
+                                <span>OpenAI's coding agent CLI</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: Using an AI Agent for Economics Research</h4>
+                    <div class="code-block">
+                        <code><span class="prompt">$</span> claude
+
+<span class="prompt">></span> Analyze this panel dataset using a difference-in-differences 
+  approach with state and year fixed effects. Use robust 
+  standard errors clustered at the state level.
+
+<span class="output">✓ Reading data from treatment_data.dta
+✓ Generating Stata code with reghdfe
+✓ Adding clustered standard errors
+✓ Creating event study plot
+✓ Exporting results to LaTeX table</span></code>
+                    </div>
+                </div>
+            </section>
+
+            <section id="what-are-skills" class="learn-section">
+                <div class="section-icon">🛠️</div>
+                <h2>What Are Skills?</h2>
+                
+                <p><strong>Skills</strong> are reusable instruction sets that teach AI agents how to perform specific tasks. Think of them as "expert knowledge packages" that you can plug into your agent.</p>
+
+                <p>The <a href="https://agentskills.io" target="_blank">Agent Skills</a> standard defines a portable format using <code>SKILL.md</code> files that work across multiple AI tools.</p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>Without Skills</h4>
+                        <p>You must explain every detail each time: "Use Stata's reghdfe package with clustered standard errors, format output as LaTeX, follow AER style guidelines..."</p>
+                    </div>
+                    <div class="comparison-item highlight">
+                        <h4>With Skills</h4>
+                        <p>Just say: "Run a DiD analysis on this data" — the skill handles all the domain-specific knowledge automatically.</p>
+                    </div>
+                </div>
+
+                <h3>Skill Structure (SKILL.md)</h3>
+                <p>A skill is a folder containing a <code>SKILL.md</code> file with metadata and instructions:</p>
+
+                <div class="code-block">
+                    <code><span class="comment"># Folder structure</span>
+r-econometrics/
+├── SKILL.md          <span class="comment"># Required: instructions + metadata</span>
+├── scripts/          <span class="comment"># Optional: helper scripts</span>
+├── references/       <span class="comment"># Optional: documentation</span>
+└── assets/           <span class="comment"># Optional: templates, data</span></code>
+                </div>
+
+                <div class="code-block">
+                    <code><span class="comment"># Example SKILL.md</span>
+---
+name: r-econometrics
+description: Run econometric analyses in R using fixest, modelsummary
+workflow_stage: analysis
+compatibility:
+  - claude-code
+  - cursor
+  - gemini-cli
+tags: [regression, panel-data, did]
+---
+
+# R Econometrics
+
+## Purpose
+Use this skill for econometric analysis in R, including 
+difference-in-differences, instrumental variables, and 
+regression discontinuity designs.
+
+## Instructions
+1. Use the fixest package for fixed effects estimation
+2. Always report heteroskedasticity-robust standard errors
+3. Create coefficient plots using ggplot2
+4. Export tables in LaTeX format using modelsummary</code>
+                </div>
+
+                <div class="info-card">
+                    <h4>How Skills Work: Progressive Disclosure</h4>
+                    <ol>
+                        <li><strong>Discovery</strong> — Agent loads only skill names and descriptions at startup</li>
+                        <li><strong>Activation</strong> — When a task matches, the full instructions are loaded</li>
+                        <li><strong>Execution</strong> — Agent follows instructions, using bundled scripts/assets as needed</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="what-are-rules" class="learn-section">
+                <div class="section-icon">📋</div>
+                <h2>What Are Rules?</h2>
+                
+                <p><strong>Rules</strong> are project-level configuration files that provide persistent instructions to AI agents. They define coding standards, project conventions, and preferences that should apply to all interactions.</p>
+
+                <div class="comparison-grid triple">
+                    <div class="comparison-item">
+                        <h4>🔧 Project Rules</h4>
+                        <p>Live in your repository. Shared with all contributors. Version controlled.</p>
+                        <code>AGENTS.md</code>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>👤 Personal Rules</h4>
+                        <p>Apply to all your projects. Your individual preferences.</p>
+                        <code>~/.claude/CLAUDE.md</code>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>🏢 Team Rules</h4>
+                        <p>Organization-wide standards managed by IT/DevOps.</p>
+                        <code>Managed policies</code>
+                    </div>
+                </div>
+
+                <h3>What to Include in Rules</h3>
+                <ul class="feature-list">
+                    <li><strong>Build commands</strong> — How to install dependencies, run tests, build the project</li>
+                    <li><strong>Code style</strong> — Formatting preferences, naming conventions, patterns to use</li>
+                    <li><strong>Project structure</strong> — Where files should go, how modules are organized</li>
+                    <li><strong>Domain knowledge</strong> — Project-specific terminology, data sources, methodologies</li>
+                    <li><strong>Security rules</strong> — Files to never modify, secrets handling, compliance requirements</li>
+                </ul>
+
+                <div class="example-box">
+                    <h4>Example: Rules for an Economics Research Project</h4>
+                    <div class="code-block">
+                        <code><span class="comment"># AGENTS.md</span>
+
+## Project Overview
+This repository contains replication files for our JEL submission
+on minimum wage effects in developing countries.
+
+## Data
+- Raw data is in `data/raw/` — NEVER modify these files
+- Processed data goes in `data/processed/`
+- All data cleaning must be reproducible via `make data`
+
+## Code Style
+- Stata: Use `reghdfe` for fixed effects, cluster at state level
+- R: tidyverse style, use `fixest` for estimation
+- All tables in LaTeX format following AER guidelines
+
+## Testing
+- Run `make test` before committing
+- Ensure all figures reproduce exactly</code>
+                    </div>
+                </div>
+            </section>
+
+            <section id="agents-md-vs-claude-md" class="learn-section">
+                <div class="section-icon">📄</div>
+                <h2>AGENTS.md vs CLAUDE.md</h2>
+                
+                <p>Both are rule files, but they serve different purposes and have different scopes:</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>AGENTS.md</th>
+                                <th>CLAUDE.md</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Scope</strong></td>
+                                <td>Project-specific</td>
+                                <td>Personal (all projects)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Location</strong></td>
+                                <td>Repository root</td>
+                                <td><code>~/.claude/CLAUDE.md</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Version Control</strong></td>
+                                <td>✓ Committed to git</td>
+                                <td>✗ Local only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shared With Team</strong></td>
+                                <td>✓ Yes</td>
+                                <td>✗ No</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compatibility</strong></td>
+                                <td>60k+ projects, many agents</td>
+                                <td>Claude Code only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Best For</strong></td>
+                                <td>Build commands, project structure, team conventions</td>
+                                <td>Personal preferences, communication style</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-card warning">
+                    <h4>💡 Pro Tip: Use Both</h4>
+                    <p>Put project-specific instructions (build commands, data handling) in <code>AGENTS.md</code> so your collaborators benefit too. Keep personal preferences (response style, your favorite packages) in <code>CLAUDE.md</code>.</p>
+                </div>
+
+                <h3>Other Tool-Specific Files</h3>
+                <p>Different tools may have their own configuration files that work alongside <code>AGENTS.md</code>:</p>
+                <ul class="feature-list">
+                    <li><code>.cursorrules</code> — Cursor-specific rules (being unified with AGENTS.md)</li>
+                    <li><code>.gemini/settings.json</code> — Gemini CLI configuration</li>
+                    <li><code>.github/copilot-instructions.md</code> — GitHub Copilot instructions</li>
+                </ul>
+            </section>
+
+            <section id="skills-vs-subagents" class="learn-section">
+                <div class="section-icon">🔀</div>
+                <h2>Skills vs Subagents</h2>
+                
+                <p>These terms are sometimes confused, but they serve fundamentally different purposes:</p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-item">
+                        <h4>🛠️ Skills</h4>
+                        <p><strong>What:</strong> Instruction sets (text files) that teach an agent HOW to do something</p>
+                        <p><strong>Analogy:</strong> A recipe book — provides knowledge and procedures</p>
+                        <p><strong>When loaded:</strong> On-demand when relevant to the task</p>
+                        <p><strong>Execution:</strong> Main agent follows the instructions</p>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>🤖 Subagents</h4>
+                        <p><strong>What:</strong> Separate AI instances spawned to handle specific subtasks</p>
+                        <p><strong>Analogy:</strong> Hiring a contractor — delegates work to another worker</p>
+                        <p><strong>When spawned:</strong> For parallelizable or isolated tasks</p>
+                        <p><strong>Execution:</strong> Independent agent runs, returns results</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>Example: When to Use Each</h4>
+                    <div class="scenario-grid">
+                        <div class="scenario">
+                            <span class="scenario-label skill">Use a Skill</span>
+                            <p>"Run a DiD analysis following best practices"</p>
+                            <p class="scenario-why">→ The agent needs domain knowledge on HOW to do DiD correctly</p>
+                        </div>
+                        <div class="scenario">
+                            <span class="scenario-label subagent">Use a Subagent</span>
+                            <p>"Search the codebase for all files that use this dataset"</p>
+                            <p class="scenario-why">→ An independent search task that can run in parallel</p>
+                        </div>
+                        <div class="scenario">
+                            <span class="scenario-label skill">Use a Skill</span>
+                            <p>"Format this regression output as a LaTeX table"</p>
+                            <p class="scenario-why">→ Needs knowledge of formatting conventions</p>
+                        </div>
+                        <div class="scenario">
+                            <span class="scenario-label subagent">Use a Subagent</span>
+                            <p>"Read all 50 do-files and summarize what variables each creates"</p>
+                            <p class="scenario-why">→ Large, parallelizable reading task</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h4>Key Differences</h4>
+                    <table class="mini-table">
+                        <tr>
+                            <td></td>
+                            <td><strong>Skills</strong></td>
+                            <td><strong>Subagents</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Purpose</td>
+                            <td>Add knowledge</td>
+                            <td>Parallelize work</td>
+                        </tr>
+                        <tr>
+                            <td>Context</td>
+                            <td>Shares main context</td>
+                            <td>Isolated context</td>
+                        </tr>
+                        <tr>
+                            <td>Can edit files</td>
+                            <td>✓ (via main agent)</td>
+                            <td>Usually read-only</td>
+                        </tr>
+                        <tr>
+                            <td>Persistent</td>
+                            <td>✓ Reusable files</td>
+                            <td>✗ Ephemeral</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="how-they-work-together" class="learn-section">
+                <div class="section-icon">🔗</div>
+                <h2>How They Work Together</h2>
+                
+                <p>All these components form a hierarchy that guides how AI agents understand and work on your project:</p>
+
+                <div class="hierarchy-diagram">
+                    <div class="hierarchy-level">
+                        <div class="hierarchy-item org">
+                            <span class="level-label">Organization Level</span>
+                            <strong>Managed Policies</strong>
+                            <p>Company-wide standards, security requirements</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-level">
+                        <div class="hierarchy-item user">
+                            <span class="level-label">User Level</span>
+                            <strong>~/.claude/CLAUDE.md</strong>
+                            <p>Your personal preferences across all projects</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-level">
+                        <div class="hierarchy-item project">
+                            <span class="level-label">Project Level</span>
+                            <strong>AGENTS.md</strong>
+                            <p>Project rules, conventions, build commands</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-level">
+                        <div class="hierarchy-item skills">
+                            <span class="level-label">Task Level</span>
+                            <strong>Skills (SKILL.md)</strong>
+                            <p>Domain expertise loaded on-demand</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-arrow">↓</div>
+                    <div class="hierarchy-level">
+                        <div class="hierarchy-item prompt">
+                            <span class="level-label">Immediate</span>
+                            <strong>Your Prompt</strong>
+                            <p>Specific instructions for this task (highest priority)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h4>Resolution Order</h4>
+                    <p>When instructions conflict, more specific ones win:</p>
+                    <p><strong>Your prompt</strong> > <strong>Nearest AGENTS.md</strong> > <strong>Project root AGENTS.md</strong> > <strong>User CLAUDE.md</strong> > <strong>Org policies</strong></p>
+                </div>
+
+                <div class="example-box">
+                    <h4>Real-World Example: Economics Research Workflow</h4>
+                    <div class="workflow-example">
+                        <div class="workflow-step">
+                            <span class="step-num">1</span>
+                            <div>
+                                <strong>You open your research project</strong>
+                                <p>Agent reads <code>AGENTS.md</code>: learns about your data structure, Stata conventions, and that raw data must never be modified.</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-num">2</span>
+                            <div>
+                                <strong>You ask for a regression analysis</strong>
+                                <p>Agent activates the <code>stata-econometrics</code> skill: now knows to use <code>reghdfe</code>, cluster standard errors, and format output for AER.</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-num">3</span>
+                            <div>
+                                <strong>You specify "use probit instead"</strong>
+                                <p>Your prompt overrides the skill's default of OLS — agent adapts while keeping all other conventions.</p>
+                            </div>
+                        </div>
+                        <div class="workflow-step">
+                            <span class="step-num">4</span>
+                            <div>
+                                <strong>Agent spawns a subagent to search for similar regressions</strong>
+                                <p>Parallel search through your do-files to check for consistency with existing analyses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resources" class="learn-section">
+                <div class="section-icon">📚</div>
+                <h2>Resources & Documentation</h2>
+                
+                <div class="resources-grid">
+                    <a href="https://agentskills.io" class="resource-card" target="_blank">
+                        <h4>🛠️ Agent Skills Standard</h4>
+                        <p>Official specification for SKILL.md format</p>
+                        <span class="resource-link">agentskills.io →</span>
+                    </a>
+                    <a href="https://agents.md" class="resource-card" target="_blank">
+                        <h4>📄 AGENTS.md</h4>
+                        <p>Open format for guiding coding agents</p>
+                        <span class="resource-link">agents.md →</span>
+                    </a>
+                    <a href="https://docs.anthropic.com/en/docs/claude-code" class="resource-card" target="_blank">
+                        <h4>🤖 Claude Code Docs</h4>
+                        <p>Official documentation for Claude Code</p>
+                        <span class="resource-link">docs.anthropic.com →</span>
+                    </a>
+                    <a href="https://cursor.com/docs" class="resource-card" target="_blank">
+                        <h4>⌨️ Cursor Documentation</h4>
+                        <p>Learn about Cursor's AI features and rules</p>
+                        <span class="resource-link">cursor.com/docs →</span>
+                    </a>
+                    <a href="https://github.com/google-gemini/gemini-cli" class="resource-card" target="_blank">
+                        <h4>✨ Gemini CLI</h4>
+                        <p>Google's AI-powered command-line tool</p>
+                        <span class="resource-link">github.com →</span>
+                    </a>
+                    <a href="https://openai.com/codex" class="resource-card" target="_blank">
+                        <h4>🐙 OpenAI Codex</h4>
+                        <p>OpenAI's coding agent documentation</p>
+                        <span class="resource-link">openai.com →</span>
+                    </a>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Browse our curated collection of economics-specific AI skills.</p>
+                    <div class="cta-actions">
+                        <a href="../#skills" class="btn btn-primary">Browse Skills</a>
+                        <a href="submit.html" class="btn btn-secondary">Submit a Skill</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📊</span>
+                    <span>Awesome Econ AI Stuff</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff">GitHub</a>
+                    <a href="../CONTRIBUTING.md">Contribute</a>
+                    <a href="../LICENSE">License</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
