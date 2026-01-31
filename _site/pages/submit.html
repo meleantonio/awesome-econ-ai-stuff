@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Skill - Awesome Econ AI Stuff</title>
+    <meta name="description" content="Propose a new AI skill for economists. Your submission will automatically create a pull request.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Awesome Econ AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="../#skills">Skills</a>
+                <a href="../#quick-start">Quick Start</a>
+                <a href="learn.html">Learn</a>
+                <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="form-page">
+        <div class="container">
+            <header class="form-header">
+                <h1>Submit a <span class="gradient-text">New Skill</span></h1>
+                <p>Share your AI skill with the economics research community. Fill out this form and we'll automatically create a pull request for review.</p>
+            </header>
+
+            <div class="form-container">
+                <form id="skill-form" class="skill-form">
+                    <!-- Basic Info -->
+                    <section class="form-section">
+                        <h2>Basic Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="skill-name">Skill Name <span class="required">*</span></label>
+                            <input type="text" id="skill-name" name="name" required 
+                                   placeholder="e.g., stata-data-cleaning"
+                                   pattern="[a-z0-9-]+"
+                                   title="Lowercase letters, numbers, and hyphens only">
+                            <span class="hint">Lowercase with hyphens (e.g., r-econometrics)</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill-description">Short Description <span class="required">*</span></label>
+                            <input type="text" id="skill-description" name="description" required
+                                   placeholder="e.g., Clean and transform messy data in Stata"
+                                   maxlength="100">
+                            <span class="hint">Max 100 characters. This appears in skill discovery.</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="workflow-stage">Workflow Stage <span class="required">*</span></label>
+                                <select id="workflow-stage" name="workflow_stage" required>
+                                    <option value="">Select stage...</option>
+                                    <option value="ideation">💡 Ideation</option>
+                                    <option value="literature">📚 Literature Review</option>
+                                    <option value="theory">📐 Theory & Modeling</option>
+                                    <option value="data">📊 Data Management</option>
+                                    <option value="analysis">🔬 Econometric Analysis</option>
+                                    <option value="writing">📝 Academic Writing</option>
+                                    <option value="communication">🎯 Communication</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="primary-tool">Primary Tool/Language</label>
+                                <select id="primary-tool" name="primary_tool">
+                                    <option value="">Select tool...</option>
+                                    <option value="stata">Stata</option>
+                                    <option value="r">R</option>
+                                    <option value="python">Python</option>
+                                    <option value="latex">LaTeX</option>
+                                    <option value="julia">Julia</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Compatibility -->
+                    <section class="form-section">
+                        <h2>Compatibility</h2>
+                        <p class="section-hint">Select all AI tools this skill is compatible with:</p>
+                        
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="compatibility" value="claude-code" checked>
+                                <span class="checkbox-custom"></span>
+                                <span>🤖 Claude Code</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="compatibility" value="cursor" checked>
+                                <span class="checkbox-custom"></span>
+                                <span>⌨️ Cursor</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="compatibility" value="gemini-cli" checked>
+                                <span class="checkbox-custom"></span>
+                                <span>✨ Gemini CLI</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="compatibility" value="codex">
+                                <span class="checkbox-custom"></span>
+                                <span>🐙 GitHub Copilot / Codex</span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Skill Content -->
+                    <section class="form-section">
+                        <h2>Skill Content</h2>
+                        
+                        <div class="form-group">
+                            <label for="skill-purpose">Purpose <span class="required">*</span></label>
+                            <textarea id="skill-purpose" name="purpose" required rows="3"
+                                      placeholder="Describe what this skill does and when an economist should use it..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill-instructions">Instructions <span class="required">*</span></label>
+                            <textarea id="skill-instructions" name="instructions" required rows="10"
+                                      placeholder="Step-by-step instructions for the AI agent...
+
+Example:
+1. First, ask the user about their data structure
+2. Generate code that...
+3. Verify by running..."></textarea>
+                            <span class="hint">Write clear, actionable instructions the AI should follow.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill-example">Example Output</label>
+                            <textarea id="skill-example" name="example" rows="8"
+                                      placeholder="* Example Stata code this skill might generate
+* ============================================
+
+use &quot;data.dta&quot;, clear
+summarize var1 var2 var3
+regress y x1 x2 x3, robust"></textarea>
+                            <span class="hint">Show sample code or output the skill would generate.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skill-tags">Tags</label>
+                            <input type="text" id="skill-tags" name="tags"
+                                   placeholder="regression, panel-data, causal-inference">
+                            <span class="hint">Comma-separated tags for discoverability</span>
+                        </div>
+                    </section>
+
+                    <!-- Author -->
+                    <section class="form-section">
+                        <h2>Author Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="author-name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="author-name" name="author_name" required
+                                       placeholder="Jane Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="author-email">Email <span class="required">*</span></label>
+                                <input type="email" id="author-email" name="author_email" required
+                                       placeholder="jane.doe@university.edu">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="github-username">GitHub Username (optional)</label>
+                            <input type="text" id="github-username" name="github_username"
+                                   placeholder="janedoe">
+                            <span class="hint">For attribution in the pull request</span>
+                        </div>
+                    </section>
+
+                    <!-- Preview -->
+                    <section class="form-section preview-section">
+                        <h2>Preview</h2>
+                        <p class="section-hint">This is how your SKILL.md will look:</p>
+                        
+                        <div class="preview-container">
+                            <pre id="skill-preview"><code>---
+name: [skill-name]
+description: [description]
+workflow_stage: [stage]
+compatibility:
+  - claude-code
+  - cursor
+  - gemini-cli
+author: [name] <[email]>
+version: 1.0.0
+tags: []
+---
+
+# [Skill Name]
+
+## Purpose
+
+[purpose]
+
+## Instructions
+
+[instructions]
+
+## Example Output
+
+```
+[example]
+```</code></pre>
+                        </div>
+                    </section>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="updatePreview()">
+                            Update Preview
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Submit Skill →
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message" class="success-message" hidden>
+                    <div class="success-icon">✅</div>
+                    <h2>Skill Submitted!</h2>
+                    <p>Your pull request has been created. A maintainer will review it shortly.</p>
+                    <a href="#" id="pr-link" class="btn btn-primary" target="_blank">View Pull Request →</a>
+                    <a href="../" class="btn btn-secondary">Back to Home</a>
+                </div>
+
+                <!-- Error Message -->
+                <div id="error-message" class="error-message" hidden>
+                    <div class="error-icon">❌</div>
+                    <h2>Submission Failed</h2>
+                    <p id="error-text">Something went wrong. Please try again or submit via GitHub Issues.</p>
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff/issues/new?template=skill-proposal.md" 
+                       class="btn btn-secondary">Submit via GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📊</span>
+                    <span>Awesome Econ AI Stuff</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff">GitHub</a>
+                    <a href="../CONTRIBUTING.md">Contribute</a>
+                    <a href="../LICENSE">License</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/form.js"></script>
+</body>
+</html>

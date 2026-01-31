@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index | Awesome Econ AI Stuff</title>
+    <meta name="description" content="Fetch economic data from FRED, World Bank, and other APIs">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/awesome-econ-ai-stuff/assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Index | Awesome Econ AI Stuff</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Index" />
+<meta name="author" content="Awesome Econ AI Community" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Fetch economic data from FRED, World Bank, and other APIs" />
+<meta property="og:description" content="Fetch economic data from FRED, World Bank, and other APIs" />
+<link rel="canonical" href="http://localhost:4000/awesome-econ-ai-stuff/skills/data/api-data-fetcher/index/" />
+<meta property="og:url" content="http://localhost:4000/awesome-econ-ai-stuff/skills/data/api-data-fetcher/index/" />
+<meta property="og:site_name" content="Awesome Econ AI Stuff" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-01-31T12:21:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Index" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Awesome Econ AI Community" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Awesome Econ AI Community"},"dateModified":"2026-01-31T12:21:00+00:00","datePublished":"2026-01-31T12:21:00+00:00","description":"Fetch economic data from FRED, World Bank, and other APIs","headline":"Index","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/awesome-econ-ai-stuff/skills/data/api-data-fetcher/index/"},"url":"http://localhost:4000/awesome-econ-ai-stuff/skills/data/api-data-fetcher/index/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/awesome-econ-ai-stuff/" class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Awesome Econ AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="/awesome-econ-ai-stuff/#skills">Skills</a>
+                <a href="/awesome-econ-ai-stuff/#workflow">Workflow</a>
+                <a href="/awesome-econ-ai-stuff/pages/submit.html" class="nav-cta">Submit Skill</a>
+                <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section>
+            <div class="container">
+                <div class="skill-content">
+                    <div style="margin-bottom: 2rem; display: flex; justify-content: flex-end;">
+                        <button id="download-skill-btn" class="btn btn-secondary">📥 Download SKILL.md</button>
+                    </div>
+                    <h1 id="api-data-fetcher">API Data Fetcher</h1>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>This skill helps economists fetch data from major economic data APIs including FRED (Federal Reserve Economic Data), World Bank, IMF, BLS, and OECD. It generates clean, documented Python code with proper error handling.</p>
+
+<h2 id="when-to-use">When to Use</h2>
+
+<ul>
+  <li>Downloading macroeconomic indicators</li>
+  <li>Building custom datasets from multiple sources</li>
+  <li>Automating data updates for ongoing projects</li>
+  <li>Fetching cross-country panel data</li>
+</ul>
+
+<h2 id="instructions">Instructions</h2>
+
+<h3 id="step-1-identify-data-requirements">Step 1: Identify Data Requirements</h3>
+
+<p>Ask the user:</p>
+<ol>
+  <li>What data do you need? (GDP, unemployment, inflation, etc.)</li>
+  <li>What time period and frequency?</li>
+  <li>What countries/regions?</li>
+  <li>Preferred output format? (CSV, DataFrame, etc.)</li>
+</ol>
+
+<h3 id="step-2-select-appropriate-api">Step 2: Select Appropriate API</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Best Source</th>
+      <th>Package</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US macro</td>
+      <td>FRED</td>
+      <td><code class="language-plaintext highlighter-rouge">fredapi</code></td>
+    </tr>
+    <tr>
+      <td>Global development</td>
+      <td>World Bank</td>
+      <td><code class="language-plaintext highlighter-rouge">wbdata</code></td>
+    </tr>
+    <tr>
+      <td>Labor statistics</td>
+      <td>BLS</td>
+      <td><code class="language-plaintext highlighter-rouge">bls</code></td>
+    </tr>
+    <tr>
+      <td>Cross-country</td>
+      <td>OECD</td>
+      <td><code class="language-plaintext highlighter-rouge">pandasdmx</code></td>
+    </tr>
+    <tr>
+      <td>Financial</td>
+      <td>Yahoo Finance</td>
+      <td><code class="language-plaintext highlighter-rouge">yfinance</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="step-3-generate-clean-code">Step 3: Generate Clean Code</h3>
+
+<p>Include:</p>
+<ul>
+  <li>API key handling (environment variables)</li>
+  <li>Error handling for API failures</li>
+  <li>Data cleaning and formatting</li>
+  <li>Documentation of series definitions</li>
+</ul>
+
+<h2 id="example-output">Example Output</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"""</span><span class="s">
+Economic Data Fetcher
+=====================
+Downloads macroeconomic data from FRED and World Bank APIs.
+Requires: fredapi, wbdata, pandas
+
+Setup: Set FRED_API_KEY environment variable
+Get a free key from: https://fred.stlouisfed.org/docs/api/api_key.html
+</span><span class="sh">"""</span>
+
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span>
+
+<span class="c1"># ============================================
+# FRED Data Fetcher
+# ============================================
+</span>
+<span class="k">def</span> <span class="nf">fetch_fred_series</span><span class="p">(</span>
+    <span class="n">series_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">2000-01-01</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">end_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">
+    Fetch time series data from FRED.
+    
+    Parameters
+    ----------
+    series_ids : list of str
+        FRED series IDs (e.g., [</span><span class="sh">'</span><span class="s">GDP</span><span class="sh">'</span><span class="s">, </span><span class="sh">'</span><span class="s">UNRATE</span><span class="sh">'</span><span class="s">, </span><span class="sh">'</span><span class="s">CPIAUCSL</span><span class="sh">'</span><span class="s">])
+    start_date : str
+        Start date in YYYY-MM-DD format
+    end_date : str, optional
+        End date (defaults to today)
+    api_key : str, optional
+        FRED API key (defaults to FRED_API_KEY env var)
+    
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame with date index and series as columns
+    
+    Example
+    -------
+</span><span class="gp">    &gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="nf">fetch_fred_series</span><span class="p">([</span><span class="sh">'</span><span class="s">GDP</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">UNRATE</span><span class="sh">'</span><span class="p">],</span> <span class="sh">'</span><span class="s">2010-01-01</span><span class="sh">'</span><span class="p">)</span>
+    <span class="sh">"""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="n">fredapi</span> <span class="kn">import</span> <span class="n">Fred</span>
+    <span class="k">except</span> <span class="nb">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ImportError</span><span class="p">(</span><span class="sh">"</span><span class="s">Install fredapi: pip install fredapi</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># Get API key
+</span>    <span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span> <span class="ow">or</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">FRED_API_KEY</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">api_key</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span>
+            <span class="sh">"</span><span class="s">FRED API key required. Set FRED_API_KEY environment variable </span><span class="sh">"</span>
+            <span class="sh">"</span><span class="s">or pass api_key parameter. Get a key at: </span><span class="sh">"</span>
+            <span class="sh">"</span><span class="s">https://fred.stlouisfed.org/docs/api/api_key.html</span><span class="sh">"</span>
+        <span class="p">)</span>
+    
+    <span class="n">fred</span> <span class="o">=</span> <span class="nc">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">end_date</span> <span class="ow">or</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">().</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">'</span><span class="s">%Y-%m-%d</span><span class="sh">'</span><span class="p">)</span>
+    
+    <span class="c1"># Fetch each series
+</span>    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">series_id</span> <span class="ow">in</span> <span class="n">series_ids</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">series</span> <span class="o">=</span> <span class="n">fred</span><span class="p">.</span><span class="nf">get_series</span><span class="p">(</span>
+                <span class="n">series_id</span><span class="p">,</span>
+                <span class="n">observation_start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+                <span class="n">observation_end</span><span class="o">=</span><span class="n">end_date</span>
+            <span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">series_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">series</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">✓ Downloaded </span><span class="si">{</span><span class="n">series_id</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">✗ Failed to download </span><span class="si">{</span><span class="n">series_id</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># Combine into DataFrame
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">.</span><span class="n">index</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="sh">'</span><span class="s">date</span><span class="sh">'</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="c1"># Common FRED series for economists
+</span><span class="n">FRED_SERIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># GDP and Output
+</span>    <span class="sh">'</span><span class="s">GDP</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Gross Domestic Product</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">GDPC1</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Real GDP</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">GDPPOT</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Real Potential GDP</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Labor Market
+</span>    <span class="sh">'</span><span class="s">UNRATE</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Unemployment Rate</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">PAYEMS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Total Nonfarm Payrolls</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">CIVPART</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Labor Force Participation Rate</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Prices
+</span>    <span class="sh">'</span><span class="s">CPIAUCSL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Consumer Price Index</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">PCEPI</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">PCE Price Index</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">CPILFESL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Core CPI</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Interest Rates
+</span>    <span class="sh">'</span><span class="s">FEDFUNDS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Federal Funds Rate</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">DGS10</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">10-Year Treasury Rate</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">T10Y2Y</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">10Y-2Y Treasury Spread</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Money and Credit
+</span>    <span class="sh">'</span><span class="s">M2SL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">M2 Money Stock</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">TOTRESNS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Total Reserves</span><span class="sh">'</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># ============================================
+# World Bank Data Fetcher
+# ============================================
+</span>
+<span class="k">def</span> <span class="nf">fetch_world_bank_data</span><span class="p">(</span>
+    <span class="n">indicators</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">countries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">USA</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GBR</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">DEU</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">FRA</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">JPN</span><span class="sh">'</span><span class="p">],</span>
+    <span class="n">start_year</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="n">end_year</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">
+    Fetch indicator data from World Bank.
+    
+    Parameters
+    ----------
+    indicators : dict
+        Dict mapping indicator codes to names
+        e.g., {</span><span class="sh">'</span><span class="s">NY.GDP.PCAP.CD</span><span class="sh">'</span><span class="s">: </span><span class="sh">'</span><span class="s">gdp_per_capita</span><span class="sh">'</span><span class="s">}
+    countries : list of str
+        ISO 3-letter country codes
+    start_year : int
+        Start year
+    end_year : int, optional
+        End year (defaults to current year)
+    
+    Returns
+    -------
+    pd.DataFrame
+        Panel data with country and year
+    
+    Example
+    -------
+</span><span class="gp">    &gt;&gt;&gt;</span> <span class="n">indicators</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">...</span>     <span class="sh">'</span><span class="s">NY.GDP.PCAP.CD</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">gdp_per_capita</span><span class="sh">'</span><span class="p">,</span>
+    <span class="p">...</span>     <span class="sh">'</span><span class="s">SP.POP.TOTL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">population</span><span class="sh">'</span>
+    <span class="p">...</span> <span class="p">}</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">df</span> <span class="o">=</span> <span class="nf">fetch_world_bank_data</span><span class="p">(</span><span class="n">indicators</span><span class="p">,</span> <span class="p">[</span><span class="sh">'</span><span class="s">USA</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GBR</span><span class="sh">'</span><span class="p">])</span>
+    <span class="sh">"""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="n">wbdata</span>
+    <span class="k">except</span> <span class="nb">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ImportError</span><span class="p">(</span><span class="sh">"</span><span class="s">Install wbdata: pip install wbdata</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="n">end_year</span> <span class="o">=</span> <span class="n">end_year</span> <span class="ow">or</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">().</span><span class="n">year</span>
+    
+    <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">indicator_code</span><span class="p">,</span> <span class="n">indicator_name</span> <span class="ow">in</span> <span class="n">indicators</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Fetch data
+</span>            <span class="n">data</span> <span class="o">=</span> <span class="n">wbdata</span><span class="p">.</span><span class="nf">get_dataframe</span><span class="p">(</span>
+                <span class="p">{</span><span class="n">indicator_code</span><span class="p">:</span> <span class="n">indicator_name</span><span class="p">},</span>
+                <span class="n">country</span><span class="o">=</span><span class="n">countries</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">reset_index</span><span class="p">()</span>
+            <span class="n">all_data</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">✓ Downloaded </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">✗ Failed to download </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># Merge all indicators
+</span>    <span class="k">if</span> <span class="n">all_data</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">other_df</span> <span class="ow">in</span> <span class="n">all_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">other_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">country</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">date</span><span class="sh">'</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="sh">'</span><span class="s">outer</span><span class="sh">'</span><span class="p">)</span>
+        
+        <span class="c1"># Filter years
+</span>        <span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">date</span><span class="sh">'</span><span class="p">]).</span><span class="n">dt</span><span class="p">.</span><span class="n">year</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">'</span><span class="s">year</span><span class="sh">'</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">)]</span>
+        
+        <span class="k">return</span> <span class="n">df</span>
+    
+    <span class="k">return</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">()</span>
+
+
+<span class="c1"># Common World Bank indicators
+</span><span class="n">WORLD_BANK_INDICATORS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Income and Growth
+</span>    <span class="sh">'</span><span class="s">NY.GDP.PCAP.CD</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">GDP per capita (current US$)</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">NY.GDP.PCAP.KD.ZG</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">GDP per capita growth (%)</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">NY.GDP.MKTP.KD.ZG</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">GDP growth (%)</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Population
+</span>    <span class="sh">'</span><span class="s">SP.POP.TOTL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Population, total</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">SP.URB.TOTL.IN.ZS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Urban population (%)</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Trade
+</span>    <span class="sh">'</span><span class="s">NE.TRD.GNFS.ZS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Trade (% of GDP)</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">BX.KLT.DINV.WD.GD.ZS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">FDI, net inflows (% of GDP)</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Human Capital
+</span>    <span class="sh">'</span><span class="s">SE.XPD.TOTL.GD.ZS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Education expenditure (% of GDP)</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">SH.XPD.CHEX.GD.ZS</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Health expenditure (% of GDP)</span><span class="sh">'</span><span class="p">,</span>
+    
+    <span class="c1"># Inequality
+</span>    <span class="sh">'</span><span class="s">SI.POV.GINI</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Gini index</span><span class="sh">'</span><span class="p">,</span>
+    <span class="sh">'</span><span class="s">SI.POV.DDAY</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Poverty headcount ratio ($1.90/day)</span><span class="sh">'</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># ============================================
+# Usage Example
+# ============================================
+</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
+    <span class="c1"># Example 1: Fetch US macro data from FRED
+</span>    <span class="n">us_macro</span> <span class="o">=</span> <span class="nf">fetch_fred_series</span><span class="p">(</span>
+        <span class="n">series_ids</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GDP</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">UNRATE</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">CPIAUCSL</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">FEDFUNDS</span><span class="sh">'</span><span class="p">],</span>
+        <span class="n">start_date</span><span class="o">=</span><span class="sh">'</span><span class="s">2010-01-01</span><span class="sh">'</span>
+    <span class="p">)</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">US Macro Data (FRED):</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">us_macro</span><span class="p">.</span><span class="nf">tail</span><span class="p">())</span>
+    
+    <span class="c1"># Save to CSV
+</span>    <span class="n">us_macro</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data/us_macro_fred.csv</span><span class="sh">'</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Saved to data/us_macro_fred.csv</span><span class="sh">"</span><span class="p">)</span>
+    
+    <span class="c1"># Example 2: Fetch cross-country data from World Bank
+</span>    <span class="n">indicators</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sh">'</span><span class="s">NY.GDP.PCAP.CD</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">gdp_per_capita</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">SP.POP.TOTL</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">population</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">NY.GDP.MKTP.KD.ZG</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">gdp_growth</span><span class="sh">'</span>
+    <span class="p">}</span>
+    
+    <span class="n">cross_country</span> <span class="o">=</span> <span class="nf">fetch_world_bank_data</span><span class="p">(</span>
+        <span class="n">indicators</span><span class="o">=</span><span class="n">indicators</span><span class="p">,</span>
+        <span class="n">countries</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">USA</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">GBR</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">DEU</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">FRA</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">JPN</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">CHN</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">IND</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">BRA</span><span class="sh">'</span><span class="p">],</span>
+        <span class="n">start_year</span><span class="o">=</span><span class="mi">2000</span>
+    <span class="p">)</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Cross-Country Data (World Bank):</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">cross_country</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Save to CSV
+</span>    <span class="n">cross_country</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">'</span><span class="s">data/cross_country_wb.csv</span><span class="sh">'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Saved to data/cross_country_wb.csv</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="requirements">Requirements</h2>
+
+<h3 id="python-packages">Python Packages</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>fredapi wbdata pandas
+</code></pre></div></div>
+
+<h3 id="api-keys">API Keys</h3>
+<ul>
+  <li><strong>FRED</strong>: Free key from https://fred.stlouisfed.org/docs/api/api_key.html</li>
+  <li><strong>World Bank</strong>: No key required</li>
+  <li><strong>BLS</strong>: Free key from https://www.bls.gov/developers/</li>
+</ul>
+
+<p>Set environment variables:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">FRED_API_KEY</span><span class="o">=</span><span class="s2">"your_key_here"</span>
+</code></pre></div></div>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<ol>
+  <li><strong>Store API keys in environment variables</strong> - never hardcode</li>
+  <li><strong>Add rate limiting</strong> for bulk downloads</li>
+  <li><strong>Cache data locally</strong> to avoid repeated API calls</li>
+  <li><strong>Document series definitions</strong> from the source</li>
+  <li><strong>Check for revisions</strong> in real-time data</li>
+</ol>
+
+<h2 id="common-pitfalls">Common Pitfalls</h2>
+
+<ul>
+  <li>❌ Hardcoding API keys in scripts</li>
+  <li>❌ Not handling API rate limits</li>
+  <li>❌ Ignoring data vintages/revisions</li>
+  <li>❌ Mixing data frequencies without proper handling</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://fred.stlouisfed.org/docs/api/">FRED API Documentation</a></li>
+  <li><a href="https://datahelpdesk.worldbank.org/knowledgebase/topics/125589">World Bank Data API</a></li>
+  <li><a href="https://python-programming.quantecon.org/">QuantEcon: Python Data Sources</a></li>
+</ul>
+
+<h2 id="changelog">Changelog</h2>
+
+<h3 id="v100">v1.0.0</h3>
+<ul>
+  <li>Initial release with FRED and World Bank support</li>
+</ul>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📊</span>
+                    <span>Awesome Econ AI Stuff</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff">GitHub</a>
+                    <a href="/awesome-econ-ai-stuff/CONTRIBUTING.md">Contribute</a>
+                    <a href="/awesome-econ-ai-stuff/LICENSE">License (CC0)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with ❤️ for the economics research community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSZip library for zip file creation (needed for download functionality) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        // Make baseurl available to JavaScript
+        window.siteBaseurl = '/awesome-econ-ai-stuff';
+    </script>
+    <script src="/awesome-econ-ai-stuff/assets/js/main.js"></script>
+    <script src="/awesome-econ-ai-stuff/assets/js/download.js"></script>
+    <script>
+        // #region agent log
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:96',message:'skill_layout_rendered',data:{pageTitle:'Index',pageUrl:'/skills/data/api-data-fetcher/index/',baseUrl:'/awesome-econ-ai-stuff',href:window.location.href},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'A'})}).catch(()=>{});
+        // #endregion agent log
+        // #region agent log
+        const skillCssLink = document.querySelector('link[rel="stylesheet"]');
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:99',message:'skill_stylesheet_link',data:{cssHref:skillCssLink ? skillCssLink.href : null,baseUrl:'/awesome-econ-ai-stuff'},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion agent log
+        // #region agent log
+        const skillContent = document.querySelector('.skill-content');
+        const computedBg = window.getComputedStyle(document.body).backgroundColor;
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'_layouts/skill.html:103',message:'skill_dom_and_style',data:{hasSkillContent:!!skillContent,bodyBg:computedBg},timestamp:Date.now(),sessionId:'debug-session',runId:'skill-render',hypothesisId:'B'})}).catch(()=>{});
+        // #endregion agent log
+    </script>
+</body>
+</html>

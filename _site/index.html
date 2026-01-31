@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Econ AI Stuff - AI Skills for Economists</title>
+    <meta name="description" content="A curated collection of AI skills for economists. Enhance your research workflow with skills for data analysis, econometrics, LaTeX, and academic writing.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/awesome-econ-ai-stuff/assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/awesome-econ-ai-stuff/" class="nav-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Awesome Econ AI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#skills">Skills</a>
+                <a href="#quick-start">Quick Start</a>
+                <a href="/awesome-econ-ai-stuff/pages/learn.html">Learn</a>
+                <a href="/awesome-econ-ai-stuff/pages/submit.html" class="nav-cta">Submit Skill</a>
+                <a href="https://github.com/meleantonio/awesome-econ-ai-stuff" class="nav-github" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🚀 Open Source • Works with Claude, Cursor, Codex & more</div>
+            <h1 class="hero-title">
+                AI Skills for <span class="gradient-text">Economists</span>
+            </h1>
+            <p class="hero-description">
+                Supercharge your research workflow with curated AI skills. 
+                From data cleaning in Stata to writing LaTeX papers—automate the repetitive, 
+                focus on the research.
+            </p>
+            <div class="hero-actions">
+                <a href="#skills" class="btn btn-primary">Browse Skills</a>
+                <a href="#quick-start" class="btn btn-secondary">IDE Quick Start</a>
+                <a href="/awesome-econ-ai-stuff/pages/learn.html" class="btn btn-secondary">📖 Learn Basics</a>
+                <button id="download-all-btn" class="btn btn-secondary">📦 Download All Skills</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">13+</span>
+                    <span class="stat-label">Skills</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">7</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">4+</span>
+                    <span class="stat-label">Compatible Tools</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-preview">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-title">terminal</span>
+                </div>
+                <pre class="code-content"><code><span class="prompt">$</span> claude
+<span class="comment"># Using r-econometrics skill...</span>
+
+<span class="prompt">></span> <span class="command">/r-econometrics</span> Run a DiD analysis 
+  on my treatment data with state and 
+  year fixed effects
+
+<span class="output">✓ Loading data from treatment_data.csv
+✓ Generating R code with fixest package
+✓ Adding robust standard errors
+✓ Creating coefficient plot</span></code></pre>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Catalog -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Your Research, <span class="gradient-text">Supercharged</span></h2>
+            <p class="section-description">Ready-to-use skills for your AI coding assistant</p>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="ideation">💡 Ideation</button>
+                <button class="filter-tab" data-filter="literature">📚 Literature</button>
+                <button class="filter-tab" data-filter="theory">📐 Theory</button>
+                <button class="filter-tab" data-filter="data">📊 Data</button>
+                <button class="filter-tab" data-filter="analysis">🔬 Analysis</button>
+                <button class="filter-tab" data-filter="writing">📝 Writing</button>
+                <button class="filter-tab" data-filter="communication">🎯 Communication</button>
+            </div>
+
+            <!-- Skills Grid - Dynamically generated from skill collection -->
+            <div class="skills-grid">
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="analysis">
+                            <div class="skill-header">
+                                <span class="skill-icon">🔬</span>
+                                <span class="skill-stage">Analysis</span>
+                            </div>
+                            <h3 class="skill-title">skill-name</h3>
+                            <p class="skill-description">One-line description for AI agent discovery (keep under 100 chars)</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">tag1</span>
+                                
+                                    <span class="tag">tag2</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/SKILL_TEMPLATE/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="analysis">
+                            <div class="skill-header">
+                                <span class="skill-icon">🔬</span>
+                                <span class="skill-stage">Analysis</span>
+                            </div>
+                            <h3 class="skill-title">python-panel-data</h3>
+                            <p class="skill-description">Panel data analysis with Python using linearmodels and pandas.</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">python</span>
+                                
+                                    <span class="tag">pandas</span>
+                                
+                                    <span class="tag">linearmodels</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/analysis/python-panel-data/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="analysis">
+                            <div class="skill-header">
+                                <span class="skill-icon">🔬</span>
+                                <span class="skill-stage">Analysis</span>
+                            </div>
+                            <h3 class="skill-title">r-econometrics</h3>
+                            <p class="skill-description">Run IV, DiD, and RDD analyses in R with proper diagnostics</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">R</span>
+                                
+                                    <span class="tag">econometrics</span>
+                                
+                                    <span class="tag">causal-inference</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/analysis/r-econometrics/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="analysis">
+                            <div class="skill-header">
+                                <span class="skill-icon">🔬</span>
+                                <span class="skill-stage">Analysis</span>
+                            </div>
+                            <h3 class="skill-title">stata-regression</h3>
+                            <p class="skill-description">Run regression analyses in Stata with publication-ready output tables.</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">stata</span>
+                                
+                                    <span class="tag">regression</span>
+                                
+                                    <span class="tag">esttab</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/analysis/stata-regression/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="communication">
+                            <div class="skill-header">
+                                <span class="skill-icon">🎯</span>
+                                <span class="skill-stage">Communication</span>
+                            </div>
+                            <h3 class="skill-title">beamer-presentation</h3>
+                            <p class="skill-description">Create academic presentations in Beamer with professional themes</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">LaTeX</span>
+                                
+                                    <span class="tag">Beamer</span>
+                                
+                                    <span class="tag">presentations</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/communication/beamer-presentation/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="communication">
+                            <div class="skill-header">
+                                <span class="skill-icon">🎯</span>
+                                <span class="skill-stage">Communication</span>
+                            </div>
+                            <h3 class="skill-title">econ-visualization</h3>
+                            <p class="skill-description">Create publication-quality charts and graphs for economics papers.</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">visualization</span>
+                                
+                                    <span class="tag">ggplot2</span>
+                                
+                                    <span class="tag">charts</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/communication/econ-visualization/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="data">
+                            <div class="skill-header">
+                                <span class="skill-icon">📊</span>
+                                <span class="skill-stage">Data</span>
+                            </div>
+                            <h3 class="skill-title">api-data-fetcher</h3>
+                            <p class="skill-description">Fetch economic data from FRED, World Bank, and other APIs</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">Python</span>
+                                
+                                    <span class="tag">API</span>
+                                
+                                    <span class="tag">FRED</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/data/api-data-fetcher/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="data">
+                            <div class="skill-header">
+                                <span class="skill-icon">📊</span>
+                                <span class="skill-stage">Data</span>
+                            </div>
+                            <h3 class="skill-title">stata-data-cleaning</h3>
+                            <p class="skill-description">Clean and transform messy data in Stata with reproducible workflows</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">Stata</span>
+                                
+                                    <span class="tag">data-cleaning</span>
+                                
+                                    <span class="tag">data-wrangling</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/data/stata-data-cleaning/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="ideation">
+                            <div class="skill-header">
+                                <span class="skill-icon">💡</span>
+                                <span class="skill-stage">Ideation</span>
+                            </div>
+                            <h3 class="skill-title">research-ideation</h3>
+                            <p class="skill-description">Generate research questions from economic phenomena</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">research</span>
+                                
+                                    <span class="tag">ideation</span>
+                                
+                                    <span class="tag">hypothesis</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/ideation/research-ideation/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="literature">
+                            <div class="skill-header">
+                                <span class="skill-icon">📚</span>
+                                <span class="skill-stage">Literature</span>
+                            </div>
+                            <h3 class="skill-title">lit-review-assistant</h3>
+                            <p class="skill-description">Search, summarize, and synthesize economics literature</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">literature-review</span>
+                                
+                                    <span class="tag">papers</span>
+                                
+                                    <span class="tag">citations</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/literature/lit-review-assistant/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="theory">
+                            <div class="skill-header">
+                                <span class="skill-icon">📐</span>
+                                <span class="skill-stage">Theory</span>
+                            </div>
+                            <h3 class="skill-title">latex-econ-model</h3>
+                            <p class="skill-description">Write and typeset economic models in LaTeX with proper notation</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">LaTeX</span>
+                                
+                                    <span class="tag">economic-models</span>
+                                
+                                    <span class="tag">theory</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/theory/latex-econ-model/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="writing">
+                            <div class="skill-header">
+                                <span class="skill-icon">📝</span>
+                                <span class="skill-stage">Writing</span>
+                            </div>
+                            <h3 class="skill-title">academic-paper-writer</h3>
+                            <p class="skill-description">Draft economics papers with proper structure and academic style</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">LaTeX</span>
+                                
+                                    <span class="tag">academic-writing</span>
+                                
+                                    <span class="tag">papers</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/writing/academic-paper-writer/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+                    
+                        
+                        
+                        
+                        
+                        
+
+                        <article class="skill-card" data-category="writing">
+                            <div class="skill-header">
+                                <span class="skill-icon">📝</span>
+                                <span class="skill-stage">Writing</span>
+                            </div>
+                            <h3 class="skill-title">latex-tables</h3>
+                            <p class="skill-description">Generate publication-ready regression tables in LaTeX.</p>
+                            <div class="skill-tags">
+                                
+                                    <span class="tag">latex</span>
+                                
+                                    <span class="tag">tables</span>
+                                
+                                    <span class="tag">regression</span>
+                                
+                            </div>
+                            <div class="skill-footer">
+                                <div class="compatibility">
+                                    
+                                        <span title="Claude Code">🤖</span>
+                                    
+                                    
+                                        <span title="Cursor">⌨️</span>
+                                    
+                                    
+                                        <span title="Gemini">✨</span>
+                                    
+                                </div>
+                                <a href="/awesome-econ-ai-stuff/skills/writing/latex-tables/index/" class="skill-link">View →</a>
+                            </div>
+                        </article>
+                    
+                
+            </div>
+
+            <div class="skills-cta">
+                <p>Don't see what you need?</p>
+                <a href="/awesome-econ-ai-stuff/pages/submit.html" class="btn btn-primary">Submit a Skill →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start -->
+    <section id="quick-start" class="quickstart-section">
+        <div class="container">
+            <h2 class="section-title">Quick Start</h2>
+            <p class="section-description">Get up and running in under 2 minutes</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Install Your AI Tool</h3>
+                        <p>Choose your preferred AI coding assistant:</p>
+                        <div class="tool-grid">
+                            <a href="https://docs.anthropic.com/claude-code" class="tool-card">
+                                <span class="tool-icon">🤖</span>
+                                Claude Code
+                            </a>
+                            <a href="https://cursor.com" class="tool-card">
+                                <span class="tool-icon">⌨️</span>
+                                Cursor
+                            </a>
+                            <a href="https://github.com/google-gemini/gemini-cli" class="tool-card">
+                                <span class="tool-icon">✨</span>
+                                Gemini CLI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Copy a Skill</h3>
+                        <p>Clone a skill to your tool's skills directory:</p>
+                        <div class="code-block">
+                            <code>
+<span class="comment"># For Claude Code</span>
+mkdir -p ~/.claude/skills
+git clone https://github.com/.../r-econometrics ~/.claude/skills/r-econometrics
+                            </code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Use the Skill</h3>
+                        <p>Invoke the skill via slash command or natural language:</p>
+                        <div class="code-block">
+                            <code>/r-econometrics Run a DiD analysis on treatment_data.csv</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compatible Tools -->
+    <section class="tools-section">
+        <div class="container">
+            <h2 class="section-title">Works With Your Favorite Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-logo">
+                    <span>🤖</span>
+                    <span>Claude Code</span>
+                    <span class="status full">Full Support</span>
+                </div>
+                <div class="tool-logo">
+                    <span>⌨️</span>
+                    <span>Cursor</span>
+                    <span class="status full">Full Support</span>
+                </div>
+                <div class="tool-logo">
+                    <span>✨</span>
+                    <span>Gemini CLI</span>
+                    <span class="status full">Full Support</span>
+                </div>
+                <div class="tool-logo">
+                    <span>🐙</span>
+                    <span>GitHub Copilot</span>
+                    <span class="status partial">Partial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Supercharge Your Research?</h2>
+            <p>Join economists worldwide using AI skills to accelerate their workflow.</p>
+            <div class="cta-actions">
+                <a href="#skills" class="btn btn-primary btn-lg">Browse Skills</a>
+                <a href="/awesome-econ-ai-stuff/pages/learn.html" class="btn btn-secondary btn-lg">Learn the Basics</a>
+                <a href="/awesome-econ-ai-stuff/pages/submit.html" class="btn btn-secondary btn-lg">Contribute a Skill</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📊</span>
+                    <span>Awesome Econ AI Stuff</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/meleantonio/awesome-econ-ai-stuff">GitHub</a>
+                    <a href="/awesome-econ-ai-stuff/pages/learn.html">Learn</a>
+                    <a href="CONTRIBUTING.md">Contribute</a>
+                    <a href="LICENSE">License (CC0)</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with ❤️ for the economics research community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JSZip library for zip file creation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+        // Make baseurl available to JavaScript
+        window.siteBaseurl = '/awesome-econ-ai-stuff';
+    </script>
+    <script src="/awesome-econ-ai-stuff/assets/js/main.js"></script>
+    <script src="/awesome-econ-ai-stuff/assets/js/download.js"></script>
+    <script>
+        // #region agent log
+        fetch('http://127.0.0.1:7243/ingest/1473a369-009a-410d-aaaa-02f9f1b78628',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:512',message:'homepage_log_probe',data:{href:window.location.href,styleHrefs:Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map((link)=>link.href)},timestamp:Date.now(),sessionId:'debug-session',runId:'homepage-probe',hypothesisId:'E'})}).catch(()=>{});
+        // #endregion agent log
+    </script>
+</body>
+</html>
