@@ -168,8 +168,8 @@ async function downloadSkillFile() {
             skillPath = currentPath.substring(baseUrl.length);
         }
         
-        // Remove trailing slash and add SKILL.md
-        skillPath = skillPath.replace(/\/$/, '') + '/SKILL.md';
+        // Remove trailing slash and /index suffix (Jekyll creates /index/ URLs), then add SKILL.md
+        skillPath = skillPath.replace(/\/$/, '').replace(/\/index$/, '') + '/SKILL.md';
         
         // Fix path: Jekyll serves from /skills/ but repo uses _skills/
         skillPath = skillPath.replace(/^\/skills\//, '_skills/');
