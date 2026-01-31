@@ -171,6 +171,9 @@ async function downloadSkillFile() {
         // Remove trailing slash and add SKILL.md
         skillPath = skillPath.replace(/\/$/, '') + '/SKILL.md';
         
+        // Fix path: Jekyll serves from /skills/ but repo uses _skills/
+        skillPath = skillPath.replace(/^\/skills\//, '_skills/');
+        
         // Fetch the SKILL.md file (with fallback to GitHub raw URL)
         const content = await fetchFileContent(skillPath);
         
