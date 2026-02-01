@@ -68,6 +68,7 @@ Skills are organized by research workflow stage:
 
 ### 📐 Theory & Modeling
 - [latex-econ-model](skills/theory/latex-econ-model/) - Write economic models in LaTeX
+- [general-equilibrium-model-builder](skills/theory/general-equilibrium-model-builder/) - Build and solve Walrasian GE models in Julia
 - [game-theory-solver](skills/theory/game-theory-solver/) - Solve and visualize game theory problems
 
 ### 📊 Data Management
