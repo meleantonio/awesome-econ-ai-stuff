@@ -4,11 +4,30 @@ Thank you for your interest in contributing! This guide explains how to submit n
 
 ## 📋 Table of Contents
 
+- [Developer Setup](#developer-setup)
 - [Submitting a New Skill](#submitting-a-new-skill)
 - [Skill Requirements](#skill-requirements)
 - [SKILL.md Format](#skillmd-format)
 - [Testing Your Skill](#testing-your-skill)
+- [Security Guidelines](#security-guidelines)
 - [Code of Conduct](#code-of-conduct)
+
+---
+
+## Developer Setup
+
+After cloning the repository, set up the security hooks:
+
+```bash
+# Clone the repository
+git clone https://github.com/meleantonio/awesome-econ-ai-stuff.git
+cd awesome-econ-ai-stuff
+
+# Install git hooks (recommended)
+.github/scripts/setup-hooks.sh
+```
+
+This installs a pre-commit hook that scans markdown files for potentially malicious content (script injection, data exfiltration, etc.).
 
 ---
 
@@ -160,6 +179,37 @@ Choose the most appropriate stage for your skill:
 | `analysis` | Econometric analysis | Regression, IV, panel data |
 | `writing` | Academic paper writing | Drafting, tables, referee responses |
 | `communication` | Presentations and visualization | Beamer, charts, websites |
+
+---
+
+## Security Guidelines
+
+SKILL.md files are executed by AI agents and have access to your system. To protect users:
+
+### What you must NOT include in skills
+
+- ❌ Any code that runs scripts or JavaScript
+- ❌ Network-related operations that make web requests
+- ❌ Functions that execute code at runtime
+- ❌ Access to browser storage or cookies
+- ❌ Event handler attributes that trigger actions when elements are clicked, loaded, or encounter errors
+- ❌ Embedding content or resources from external sources
+- ❌ Content that is hidden, encoded, or intentionally made difficult to read
+
+### Automated security scanning
+
+This repository uses a pre-commit hook that automatically scans markdown files for suspicious patterns. If your commit is blocked:
+
+1. Review the flagged content
+2. Remove any suspicious code
+3. If it's a false positive, you can bypass with `git commit --no-verify` (use sparingly)
+
+### Reporting security issues
+
+If you find a security vulnerability in a skill, please:
+1. Do NOT open a public issue
+2. Email the maintainers directly
+3. Include details about the vulnerability and affected files
 
 ---
 
