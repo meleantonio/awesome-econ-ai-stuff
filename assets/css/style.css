@@ -795,6 +795,601 @@ section {
 }
 
 /* ============================================
+   Path Selector Section
+   ============================================ */
+.path-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.path-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.path-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.path-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.path-card.path-card-featured {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 1px var(--accent-secondary), var(--shadow-md);
+}
+
+/* Active state per path */
+.path-card.active[data-path="beginner"] {
+    border-color: #22c55e;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.25), var(--shadow-md);
+}
+
+.path-card.active[data-path="intermediate"] {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.25), var(--shadow-md);
+}
+
+.path-card.active[data-path="advanced"] {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.25), var(--shadow-md);
+}
+
+.path-active-check {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+[data-path="beginner"] .path-active-check { background: #22c55e; }
+[data-path="intermediate"] .path-active-check { background: var(--accent-secondary); }
+[data-path="advanced"] .path-active-check { background: var(--accent-primary); }
+
+.path-popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-secondary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px var(--space-md);
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.path-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.path-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.path-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 var(--space-sm);
+}
+
+.path-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    flex: 1;
+}
+
+.path-features li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: var(--space-xs) 0;
+    padding-left: var(--space-md);
+    position: relative;
+}
+
+.path-features li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+}
+
+.path-card.active .path-features li::before {
+    color: var(--accent-primary);
+}
+
+[data-path="beginner"].active .path-features li::before { color: #22c55e; }
+[data-path="intermediate"].active .path-features li::before { color: var(--accent-secondary); }
+[data-path="advanced"].active .path-features li::before { color: var(--accent-primary); }
+
+.path-btn {
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-sm) var(--space-lg);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-sans);
+    align-self: flex-start;
+}
+
+.path-btn-beginner {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.path-btn-beginner:hover {
+    background: rgba(34, 197, 94, 0.25);
+}
+
+.path-btn-intermediate {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-secondary);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.path-btn-intermediate:hover {
+    background: rgba(59, 130, 246, 0.25);
+}
+
+.path-btn-advanced {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--accent-primary);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.path-btn-advanced:hover {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+.path-skip {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.path-skip-link {
+    color: var(--text-secondary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.path-skip-link:hover {
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Path Guidance Panels
+   ============================================ */
+.path-guidance-section {
+    padding: 0;
+}
+
+.path-guidance-panel {
+    padding: var(--space-2xl) 0;
+    border-bottom: 1px solid var(--border-color);
+    animation: fadeSlideIn var(--transition-slow) ease;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.guidance-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.guidance-beginner { border-left: 4px solid #22c55e; padding-left: var(--space-xl); }
+.guidance-intermediate { border-left: 4px solid var(--accent-secondary); padding-left: var(--space-xl); }
+.guidance-advanced { border-left: 4px solid var(--accent-primary); padding-left: var(--space-xl); }
+
+.guidance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 100px;
+    margin-bottom: var(--space-md);
+}
+
+.beginner-badge {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.intermediate-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-secondary);
+}
+
+.advanced-badge {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--accent-primary);
+}
+
+.guidance-text h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.guidance-text p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.guidance-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+/* Workflow map */
+.guidance-workflow-map {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0;
+}
+
+.wf-stage {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xs) var(--space-md);
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.wf-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Guidance highlight area */
+.guidance-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.guidance-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+}
+
+.guidance-card-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.guidance-card-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.guidance-card-title {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+}
+
+.guidance-card-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.guidance-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.guidance-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.guidance-step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    color: #22c55e;
+}
+
+.guidance-recommended-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.guidance-rec-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md) var(--space-lg);
+    transition: all var(--transition-fast);
+    font-size: 0.9rem;
+    font-family: var(--font-mono);
+}
+
+.guidance-rec-item:hover {
+    border-color: var(--accent-primary);
+    color: var(--text-primary);
+}
+
+.rec-icon {
+    font-size: 1.1rem;
+}
+
+.rec-arrow {
+    margin-left: auto;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   Path Context Banner (above skills)
+   ============================================ */
+.path-context-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-sm) var(--space-lg);
+    margin-bottom: var(--space-lg);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.path-context-icon {
+    font-size: 1.1rem;
+}
+
+.path-context-change {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--accent-primary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.path-context-change:hover {
+    color: var(--accent-secondary);
+}
+
+/* ============================================
+   Skill Card — Path States
+   ============================================ */
+.skill-card.skill-recommended {
+    border-color: rgba(124, 58, 237, 0.4);
+    position: relative;
+}
+
+.skill-card[data-level="beginner"].skill-recommended {
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.skill-card[data-level="intermediate"].skill-recommended {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.skill-card[data-level="advanced"].skill-recommended {
+    border-color: rgba(124, 58, 237, 0.4);
+}
+
+.skill-card.skill-dimmed {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Recommendation badge on card */
+.skill-rec-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px var(--space-sm);
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: auto;
+}
+
+.skill-rec-badge-beginner {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.skill-rec-badge-intermediate {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-secondary);
+}
+
+.skill-rec-badge-advanced {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--accent-primary);
+}
+
+/* ============================================
+   Nav Path Indicator
+   ============================================ */
+.nav-path-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 3px var(--space-md);
+    border-radius: 100px;
+    border: 1px solid;
+    transition: all var(--transition-fast);
+}
+
+.nav-path-indicator.path-ind-beginner {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.nav-path-indicator.path-ind-intermediate {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-secondary);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.nav-path-indicator.path-ind-advanced {
+    background: rgba(124, 58, 237, 0.1);
+    color: var(--accent-primary);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* ============================================
+   Quick Start — variant toggling
+   ============================================ */
+.qs-beginner-intro {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.qs-intro-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+.qs-next-step {
+    text-align: center;
+    margin-top: var(--space-xl);
+    color: var(--text-secondary);
+}
+
+.inline-link {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+    color: var(--accent-secondary);
+}
+
+/* ============================================
+   Responsive — Path Section
+   ============================================ */
+@media (max-width: 768px) {
+    .path-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .path-card-featured {
+        order: -1;
+    }
+
+    .guidance-inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .guidance-beginner,
+    .guidance-intermediate,
+    .guidance-advanced {
+        border-left: none;
+        border-top: 4px solid;
+        padding-left: 0;
+        padding-top: var(--space-lg);
+    }
+
+    .guidance-beginner { border-top-color: #22c55e; }
+    .guidance-intermediate { border-top-color: var(--accent-secondary); }
+    .guidance-advanced { border-top-color: var(--accent-primary); }
+
+    .guidance-workflow-map {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: var(--space-sm);
+    }
+
+    .guidance-actions {
+        flex-direction: column;
+    }
+
+    .path-context-banner {
+        flex-wrap: wrap;
+    }
+
+    .path-context-change {
+        margin-left: 0;
+    }
+}
+
+/* ============================================
    Responsive
    ============================================ */
 @media (max-width: 768px) {
