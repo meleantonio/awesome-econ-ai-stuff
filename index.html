@@ -53,7 +53,8 @@
                 focus on the research.
             </p>
             <div class="hero-actions">
-                <a href="#skills" class="btn btn-primary">Browse Skills</a>
+                <a href="#choose-path" class="btn btn-primary">Find Your Path</a>
+                <a href="#skills" class="btn btn-secondary">Browse Skills</a>
                 <a href="#quick-start" class="btn btn-secondary">IDE Quick Start</a>
                 <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-secondary">📖 Learn Basics</a>
                 <button id="download-all-btn" class="btn btn-secondary">📦 Download All Skills</button>
@@ -114,7 +115,7 @@
                         <li>Why should economists use them?</li>
                         <li>Get started in minutes, no setup</li>
                     </ul>
-                    <button class="path-btn path-btn-beginner">Start Here →</button>
+                    <button type="button" class="path-btn path-btn-beginner">Start Here →</button>
                 </div>
 
                 <!-- Path 2: Intermediate (featured) -->
@@ -128,7 +129,7 @@
                         <li>Stata, R, LaTeX, and Python</li>
                         <li>Install Claude Code or Cursor</li>
                     </ul>
-                    <button class="path-btn path-btn-intermediate">Browse Skills →</button>
+                    <button type="button" class="path-btn path-btn-intermediate">Browse Skills →</button>
                 </div>
 
                 <!-- Path 3: Advanced -->
@@ -141,18 +142,15 @@
                         <li>Download all skills at once</li>
                         <li>Contribute your own skills</li>
                     </ul>
-                    <button class="path-btn path-btn-advanced">Power Tools →</button>
+                    <button type="button" class="path-btn path-btn-advanced">Power Tools →</button>
                 </div>
             </div>
             <p class="path-skip">Not sure? <a href="#skills" class="path-skip-link">Browse everything →</a></p>
-        </div>
-    </section>
 
-    <!-- Path Guidance Panels -->
-    <section class="path-guidance-section" id="path-guidance">
+            <!-- Path Guidance Panels (shown after selecting a path) -->
+            <div class="path-guidance-section" id="path-guidance">
         <!-- Beginner Panel -->
         <div class="path-guidance-panel" id="panel-beginner" hidden>
-            <div class="container">
                 <div class="guidance-inner guidance-beginner">
                     <div class="guidance-text">
                         <div class="guidance-badge beginner-badge">🌱 First Steps</div>
@@ -187,12 +185,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <!-- Intermediate Panel -->
         <div class="path-guidance-panel" id="panel-intermediate" hidden>
-            <div class="container">
                 <div class="guidance-inner guidance-intermediate">
                     <div class="guidance-text">
                         <div class="guidance-badge intermediate-badge">🚀 Level Up</div>
@@ -240,12 +236,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
 
         <!-- Advanced Panel -->
         <div class="path-guidance-panel" id="panel-advanced" hidden>
-            <div class="container">
                 <div class="guidance-inner guidance-advanced">
                     <div class="guidance-text">
                         <div class="guidance-badge advanced-badge">⚡ Power Mode</div>
@@ -282,9 +276,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-    </section>
+            </div> <!-- /path-guidance-section -->
+        </div> <!-- /container -->
+    </section> <!-- /choose-path -->
 
     <!-- Skills Catalog -->
     <section id="skills" class="skills-section">
@@ -296,7 +291,7 @@
             <div class="path-context-banner" id="path-context-banner" hidden>
                 <span class="path-context-icon" id="path-context-icon"></span>
                 <span id="path-context-text"></span>
-                <button class="path-context-change" id="path-context-change">Change path</button>
+                <button type="button" class="path-context-change" id="path-context-change">Change path</button>
             </div>
 
             <!-- Filter Tabs -->
@@ -316,7 +311,7 @@
             <!-- Skills Grid - Dynamically generated from skill collection -->
             <div class="skills-grid">
                 {% for skill in site.skills %}
-                    {% if skill.name and skill.workflow_stage %}
+                    {% if skill.name and skill.workflow_stage and skill.name != "skill-name" %}
                         {% assign category = skill.workflow_stage %}
                         {% assign skill_icon = "🔬" %}
                         {% assign skill_label = "Analysis" %}
