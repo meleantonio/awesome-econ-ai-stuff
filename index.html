@@ -28,6 +28,7 @@
                 <span class="logo-text">Awesome Econ AI</span>
             </a>
             <div class="nav-links">
+                <a href="#choose-path" class="nav-path-indicator" id="nav-path-indicator" hidden></a>
                 <a href="#skills">Skills</a>
                 <a href="#quick-start">Quick Start</a>
                 <a href="{{ site.baseurl }}/pages/learn.html">Learn</a>
@@ -95,15 +96,213 @@
         </div>
     </header>
 
+    <!-- Choose Your Path -->
+    <section id="choose-path" class="path-section">
+        <div class="container">
+            <div class="path-header">
+                <h2 class="section-title">Find Your <span class="gradient-text">Path</span></h2>
+                <p class="section-description">Tell us where you are with AI tools — we'll personalise your experience</p>
+            </div>
+            <div class="path-cards">
+                <!-- Path 1: Beginner -->
+                <div class="path-card" data-path="beginner">
+                    <div class="path-icon">🌱</div>
+                    <h3 class="path-title">First Steps</h3>
+                    <p class="path-subtitle">I'm curious about AI tools for my research</p>
+                    <ul class="path-features">
+                        <li>What are AI skills?</li>
+                        <li>Why should economists use them?</li>
+                        <li>Get started in minutes, no setup</li>
+                    </ul>
+                    <button class="path-btn path-btn-beginner">Start Here →</button>
+                </div>
+
+                <!-- Path 2: Intermediate (featured) -->
+                <div class="path-card path-card-featured" data-path="intermediate">
+                    <div class="path-popular-badge">Most Popular</div>
+                    <div class="path-icon">🚀</div>
+                    <h3 class="path-title">Level Up</h3>
+                    <p class="path-subtitle">I use ChatGPT or Claude, want structured workflows</p>
+                    <ul class="path-features">
+                        <li>Repeatable research pipelines</li>
+                        <li>Stata, R, LaTeX, and Python</li>
+                        <li>Install Claude Code or Cursor</li>
+                    </ul>
+                    <button class="path-btn path-btn-intermediate">Browse Skills →</button>
+                </div>
+
+                <!-- Path 3: Advanced -->
+                <div class="path-card" data-path="advanced">
+                    <div class="path-icon">⚡</div>
+                    <h3 class="path-title">Power Mode</h3>
+                    <p class="path-subtitle">I build with AI agents, Cursor, or Claude Code</p>
+                    <ul class="path-features">
+                        <li>Engineering &amp; automation skills</li>
+                        <li>Download all skills at once</li>
+                        <li>Contribute your own skills</li>
+                    </ul>
+                    <button class="path-btn path-btn-advanced">Power Tools →</button>
+                </div>
+            </div>
+            <p class="path-skip">Not sure? <a href="#skills" class="path-skip-link">Browse everything →</a></p>
+        </div>
+    </section>
+
+    <!-- Path Guidance Panels -->
+    <section class="path-guidance-section" id="path-guidance">
+        <!-- Beginner Panel -->
+        <div class="path-guidance-panel" id="panel-beginner" hidden>
+            <div class="container">
+                <div class="guidance-inner guidance-beginner">
+                    <div class="guidance-text">
+                        <div class="guidance-badge beginner-badge">🌱 First Steps</div>
+                        <h2>What is an AI Skill?</h2>
+                        <p>An AI skill is a small instruction file (SKILL.md) that you give to an AI assistant like Claude or Cursor. Instead of writing the same long prompt every time, you save it once and reuse it with a single command.</p>
+                        <p>Think of it like a custom research assistant who already knows your workflow — just tell it what to do and it follows your exact method.</p>
+                        <div class="guidance-actions">
+                            <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-primary">📖 Read the Beginner Guide</a>
+                            <a href="{{ site.baseurl }}/skills/ideation/research-ideation/" class="btn btn-secondary">Try Your First Skill →</a>
+                        </div>
+                    </div>
+                    <div class="guidance-highlight">
+                        <div class="guidance-card">
+                            <div class="guidance-card-icon">💡</div>
+                            <div class="guidance-card-label">Start with</div>
+                            <div class="guidance-card-title">Research Ideation</div>
+                            <div class="guidance-card-desc">Generate research questions from any topic — no coding, no setup required.</div>
+                        </div>
+                        <div class="guidance-steps">
+                            <div class="guidance-step">
+                                <span class="guidance-step-num">1</span>
+                                <span>Open Claude.ai in your browser</span>
+                            </div>
+                            <div class="guidance-step">
+                                <span class="guidance-step-num">2</span>
+                                <span>Paste the skill instructions</span>
+                            </div>
+                            <div class="guidance-step">
+                                <span class="guidance-step-num">3</span>
+                                <span>Describe your research area</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Intermediate Panel -->
+        <div class="path-guidance-panel" id="panel-intermediate" hidden>
+            <div class="container">
+                <div class="guidance-inner guidance-intermediate">
+                    <div class="guidance-text">
+                        <div class="guidance-badge intermediate-badge">🚀 Level Up</div>
+                        <h2>Your Research Pipeline, Automated</h2>
+                        <p>You already use AI for writing and brainstorming. Now structure your entire research workflow — from literature to final presentation — with skills that follow your exact methods every time.</p>
+                        <div class="guidance-workflow-map">
+                            <div class="wf-stage">💡 Ideation</div>
+                            <div class="wf-arrow">→</div>
+                            <div class="wf-stage">📚 Literature</div>
+                            <div class="wf-arrow">→</div>
+                            <div class="wf-stage">📊 Data</div>
+                            <div class="wf-arrow">→</div>
+                            <div class="wf-stage">🔬 Analysis</div>
+                            <div class="wf-arrow">→</div>
+                            <div class="wf-stage">📝 Writing</div>
+                        </div>
+                        <div class="guidance-actions">
+                            <a href="https://docs.anthropic.com/en/docs/claude-code/overview" class="btn btn-primary" target="_blank" rel="noopener">Install Claude Code</a>
+                            <a href="https://cursor.com" class="btn btn-secondary" target="_blank" rel="noopener">Or Try Cursor</a>
+                        </div>
+                    </div>
+                    <div class="guidance-highlight">
+                        <div class="guidance-card-label">Top picks for you</div>
+                        <div class="guidance-recommended-list">
+                            <a href="{{ site.baseurl }}/skills/analysis/r-econometrics/" class="guidance-rec-item">
+                                <span class="rec-icon">🔬</span>
+                                <span>r-econometrics</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/data/stata-data-cleaning/" class="guidance-rec-item">
+                                <span class="rec-icon">📊</span>
+                                <span>stata-data-cleaning</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/writing/academic-paper-writer/" class="guidance-rec-item">
+                                <span class="rec-icon">📝</span>
+                                <span>academic-paper-writer</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/literature/lit-review-assistant/" class="guidance-rec-item">
+                                <span class="rec-icon">📚</span>
+                                <span>lit-review-assistant</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Panel -->
+        <div class="path-guidance-panel" id="panel-advanced" hidden>
+            <div class="container">
+                <div class="guidance-inner guidance-advanced">
+                    <div class="guidance-text">
+                        <div class="guidance-badge advanced-badge">⚡ Power Mode</div>
+                        <h2>The Full Arsenal</h2>
+                        <p>You're already building with agents. These skills slot directly into your Cursor rules, Claude Code AGENTS.md, or Gemini CLI config — giving your AI a reusable, versioned instruction set for every stage of economic research.</p>
+                        <div class="guidance-actions">
+                            <button id="download-all-btn-panel" class="btn btn-primary">📦 Download All 17 Skills</button>
+                            <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary">Contribute a Skill →</a>
+                        </div>
+                    </div>
+                    <div class="guidance-highlight">
+                        <div class="guidance-card-label">Engineering skills</div>
+                        <div class="guidance-recommended-list">
+                            <a href="{{ site.baseurl }}/skills/engineering/sdd/" class="guidance-rec-item">
+                                <span class="rec-icon">⚙️</span>
+                                <span>Spec-Driven Development</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/engineering/techdebt/" class="guidance-rec-item">
+                                <span class="rec-icon">⚙️</span>
+                                <span>Tech Debt Tracker</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/engineering/commit-push-pr/" class="guidance-rec-item">
+                                <span class="rec-icon">⚙️</span>
+                                <span>Commit → Push → PR</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                            <a href="{{ site.baseurl }}/skills/engineering/code-simplifier/" class="guidance-rec-item">
+                                <span class="rec-icon">⚙️</span>
+                                <span>Code Simplifier</span>
+                                <span class="rec-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Catalog -->
     <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">Your Research, <span class="gradient-text">Supercharged</span></h2>
             <p class="section-description">Ready-to-use skills for your AI coding assistant</p>
 
+            <!-- Path context banner (shown when a path is active) -->
+            <div class="path-context-banner" id="path-context-banner" hidden>
+                <span class="path-context-icon" id="path-context-icon"></span>
+                <span id="path-context-text"></span>
+                <button class="path-context-change" id="path-context-change">Change path</button>
+            </div>
+
             <!-- Filter Tabs -->
             <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="recommended" id="tab-recommended" hidden>✨ Recommended</button>
+                <button class="filter-tab active" data-filter="all">All Skills</button>
                 <button class="filter-tab" data-filter="ideation">💡 Ideation</button>
                 <button class="filter-tab" data-filter="literature">📚 Literature</button>
                 <button class="filter-tab" data-filter="theory">📐 Theory</button>
@@ -121,35 +320,44 @@
                         {% assign category = skill.workflow_stage %}
                         {% assign skill_icon = "🔬" %}
                         {% assign skill_label = "Analysis" %}
+                        {% assign skill_level = "intermediate" %}
                         
                         {% case category %}
                             {% when 'ideation' %}
                                 {% assign skill_icon = "💡" %}
                                 {% assign skill_label = "Ideation" %}
+                                {% assign skill_level = "beginner" %}
                             {% when 'literature' %}
                                 {% assign skill_icon = "📚" %}
                                 {% assign skill_label = "Literature" %}
+                                {% assign skill_level = "beginner" %}
                             {% when 'theory' %}
                                 {% assign skill_icon = "📐" %}
                                 {% assign skill_label = "Theory" %}
+                                {% assign skill_level = "intermediate" %}
                             {% when 'data' %}
                                 {% assign skill_icon = "📊" %}
                                 {% assign skill_label = "Data" %}
+                                {% assign skill_level = "intermediate" %}
                             {% when 'analysis' %}
                                 {% assign skill_icon = "🔬" %}
                                 {% assign skill_label = "Analysis" %}
+                                {% assign skill_level = "intermediate" %}
                             {% when 'writing' %}
                                 {% assign skill_icon = "📝" %}
                                 {% assign skill_label = "Writing" %}
+                                {% assign skill_level = "beginner" %}
                             {% when 'communication' %}
                                 {% assign skill_icon = "🎯" %}
                                 {% assign skill_label = "Communication" %}
+                                {% assign skill_level = "beginner" %}
                             {% when 'engineering' %}
                                 {% assign skill_icon = "⚙️" %}
                                 {% assign skill_label = "Engineering" %}
+                                {% assign skill_level = "advanced" %}
                         {% endcase %}
 
-                        <article class="skill-card" data-category="{{ category }}">
+                        <article class="skill-card" data-category="{{ category }}" data-level="{{ skill_level }}">
                             <div class="skill-header">
                                 <span class="skill-icon">{{ skill_icon }}</span>
                                 <span class="skill-stage">{{ skill_label }}</span>
@@ -193,51 +401,121 @@
             <h2 class="section-title">Quick Start</h2>
             <p class="section-description">Get up and running in under 2 minutes</p>
 
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Install Your AI Tool</h3>
-                        <p>Choose your preferred AI coding assistant:</p>
-                        <div class="tool-grid">
-                            <a href="https://docs.anthropic.com/claude-code" class="tool-card">
-                                <span class="tool-icon">🤖</span>
-                                Claude Code
-                            </a>
-                            <a href="https://cursor.com" class="tool-card">
-                                <span class="tool-icon">⌨️</span>
-                                Cursor
-                            </a>
-                            <a href="https://github.com/google-gemini/gemini-cli" class="tool-card">
-                                <span class="tool-icon">✨</span>
-                                Gemini CLI
-                            </a>
+            <!-- Default / Intermediate quick start (shown unless a path overrides) -->
+            <div class="qs-variant" id="qs-default">
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install Your AI Tool</h3>
+                            <p>Choose your preferred AI coding assistant:</p>
+                            <div class="tool-grid">
+                                <a href="https://docs.anthropic.com/en/docs/claude-code/overview" class="tool-card" target="_blank" rel="noopener">
+                                    <span class="tool-icon">🤖</span>
+                                    Claude Code
+                                </a>
+                                <a href="https://cursor.com" class="tool-card" target="_blank" rel="noopener">
+                                    <span class="tool-icon">⌨️</span>
+                                    Cursor
+                                </a>
+                                <a href="https://github.com/google-gemini/gemini-cli" class="tool-card" target="_blank" rel="noopener">
+                                    <span class="tool-icon">✨</span>
+                                    Gemini CLI
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Copy a Skill</h3>
-                        <p>Clone a skill to your tool's skills directory:</p>
-                        <div class="code-block">
-                            <code>
-<span class="comment"># For Claude Code</span>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Copy a Skill</h3>
+                            <p>Clone a skill to your tool's skills directory:</p>
+                            <div class="code-block">
+                                <code><span class="comment"># For Claude Code</span>
 mkdir -p ~/.claude/skills
-git clone https://github.com/.../r-econometrics ~/.claude/skills/r-econometrics
-                            </code>
+git clone https://github.com/meleantonio/awesome-econ-ai-stuff ~/.claude/skills/econ-ai</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Use the Skill</h3>
+                            <p>Invoke via slash command or natural language:</p>
+                            <div class="code-block">
+                                <code>/r-econometrics Run a DiD analysis on treatment_data.csv</code>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Use the Skill</h3>
-                        <p>Invoke the skill via slash command or natural language:</p>
-                        <div class="code-block">
-                            <code>/r-econometrics Run a DiD analysis on treatment_data.csv</code>
+            <!-- Beginner quick start -->
+            <div class="qs-variant" id="qs-beginner" hidden>
+                <div class="qs-beginner-intro">
+                    <p class="qs-intro-text">No install needed to try your first skill. Use Claude.ai directly in your browser:</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Open Claude in your browser</h3>
+                            <p>Go to <a href="https://claude.ai" target="_blank" rel="noopener" class="inline-link">claude.ai</a> and sign in for free. No credit card required.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Open the Research Ideation skill</h3>
+                            <p>Click the skill below and copy the instructions from the page.</p>
+                            <a href="{{ site.baseurl }}/skills/ideation/research-ideation/" class="btn btn-secondary" style="display:inline-flex;margin-top:0.5rem;">View Research Ideation Skill →</a>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Paste and describe your topic</h3>
+                            <p>Paste the instructions into Claude, then describe your research area. Watch it generate structured research questions.</p>
+                            <div class="code-block">
+                                <code>I'm researching the effect of minimum wage on youth employment in the EU...</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qs-next-step">
+                    <p>Ready to go further? <a href="{{ site.baseurl }}/pages/learn.html" class="inline-link">Read the full beginner guide →</a></p>
+                </div>
+            </div>
+
+            <!-- Advanced quick start -->
+            <div class="qs-variant" id="qs-advanced" hidden>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Download all skills at once</h3>
+                            <p>Get the complete library as a zip and drop the folder into your tool's skills directory.</p>
+                            <button id="download-all-btn-qs" class="btn btn-primary" style="margin-top:0.5rem;">📦 Download All 17 Skills</button>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Wire up your AGENTS.md</h3>
+                            <p>Point your agent config at the skills directory so every session has access:</p>
+                            <div class="code-block">
+                                <code><span class="comment"># In your AGENTS.md or CLAUDE.md</span>
+Skills directory: ~/.claude/skills/econ-ai/
+Available skills: r-econometrics, sdd, techdebt, ...</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Use Spec-Driven Development (SDD)</h3>
+                            <p>The SDD skill structures your entire research project as a machine-readable spec, keeping agents aligned across sessions.</p>
+                            <a href="{{ site.baseurl }}/skills/engineering/sdd/" class="btn btn-secondary" style="display:inline-flex;margin-top:0.5rem;">View SDD Skill →</a>
                         </div>
                     </div>
                 </div>
@@ -277,12 +555,42 @@ git clone https://github.com/.../r-econometrics ~/.claude/skills/r-econometrics
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Supercharge Your Research?</h2>
-            <p>Join economists worldwide using AI skills to accelerate their workflow.</p>
-            <div class="cta-actions">
-                <a href="#skills" class="btn btn-primary btn-lg">Browse Skills</a>
-                <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-secondary btn-lg">Learn the Basics</a>
-                <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary btn-lg">Contribute a Skill</a>
+            <!-- Default CTA -->
+            <div class="cta-variant" id="cta-default">
+                <h2>Ready to Supercharge Your Research?</h2>
+                <p>Join economists worldwide using AI skills to accelerate their workflow.</p>
+                <div class="cta-actions">
+                    <a href="#skills" class="btn btn-primary btn-lg">Browse Skills</a>
+                    <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-secondary btn-lg">Learn the Basics</a>
+                    <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary btn-lg">Contribute a Skill</a>
+                </div>
+            </div>
+            <!-- Beginner CTA -->
+            <div class="cta-variant" id="cta-beginner" hidden>
+                <h2>Your First AI-Assisted Paper Starts Here</h2>
+                <p>Try the Research Ideation skill in minutes — no install, no code, no commitment.</p>
+                <div class="cta-actions">
+                    <a href="{{ site.baseurl }}/skills/ideation/research-ideation/" class="btn btn-primary btn-lg">Try Your First Skill</a>
+                    <a href="{{ site.baseurl }}/pages/learn.html" class="btn btn-secondary btn-lg">📖 Read the Guide</a>
+                </div>
+            </div>
+            <!-- Intermediate CTA -->
+            <div class="cta-variant" id="cta-intermediate" hidden>
+                <h2>Build Your Research Pipeline</h2>
+                <p>Pick up a skill for every stage — from literature review to final presentation.</p>
+                <div class="cta-actions">
+                    <a href="#skills" class="btn btn-primary btn-lg">Browse All Skills</a>
+                    <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary btn-lg">Contribute a Skill</a>
+                </div>
+            </div>
+            <!-- Advanced CTA -->
+            <div class="cta-variant" id="cta-advanced" hidden>
+                <h2>Extend the Library</h2>
+                <p>Build on 17 skills. Add your own methods. Share with the community.</p>
+                <div class="cta-actions">
+                    <button id="download-all-btn-cta" class="btn btn-primary btn-lg">📦 Download All Skills</button>
+                    <a href="{{ site.baseurl }}/pages/submit.html" class="btn btn-secondary btn-lg">Contribute a Skill →</a>
+                </div>
             </div>
         </div>
     </section>

@@ -147,3 +147,22 @@ Assistant actions:
 - Added `_skills/engineering/` with normalized front matter (`workflow_stage: engineering`), synced `index.md` from `SKILL.md`.
 - Updated `index.html` (8 categories, Engineering filter + Liquid case), `assets/js/download.js` (SDD bundle constants, `general-equilibrium-model-builder` in zip-all), `_layouts/skill.html` (SDD full zip button), `.github/workflows/deploy.yml` (`_skills` root), `README.md`, `CONTRIBUTING.md`, `pages/submit.html`.
 
+## 2026-06-18 (Expertise Path Redesign)
+
+User request:
+- Redesign the website to offer several different paths depending on the AI expertise of the user. Create a plan about how this would work.
+
+Assistant actions:
+- Created `EXPERTISE_PATH_PLAN.md` with full design plan covering three paths (First Steps / Level Up / Power Mode), skill taxonomy, IA, visual design, and technical implementation notes.
+- Added **Choose Your Path** section to `index.html`: three cards (🌱 First Steps, 🚀 Level Up, ⚡ Power Mode) with self-selection, persistent via `localStorage`.
+- Added **Path Guidance Panels** to `index.html`: per-path contextual content (what-is-AI-skills for beginners, workflow map for intermediates, download-all + contribute for advanced).
+- Added `data-level` attributes (`beginner` / `intermediate` / `advanced`) to all skill cards via Liquid template based on category.
+- Added **"Recommended for you" filter tab** that auto-activates on path selection.
+- Added **path-specific Quick Start variants** (beginner: browser-only flow; intermediate: standard install; advanced: download-all + AGENTS.md + SDD).
+- Added **path-specific CTA sections** (four variants: default, beginner, intermediate, advanced).
+- Added **nav path indicator** pill showing current path, scrolls back to selector on click.
+- Added **context banner** above skills grid showing active path with "Change path" button.
+- Added CSS for all new components to `assets/css/style.css`.
+- Rewrote `assets/js/main.js` with path selection system (`applyPath`, `localStorage` persistence, skill card state management, download-all button wiring across multiple panels).
+- Branch: `cursor/expertise-path-redesign-ac50`.
+
