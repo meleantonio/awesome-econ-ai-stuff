@@ -161,12 +161,12 @@ a:hover {
    Hero Section
    ============================================ */
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: var(--space-3xl);
-    padding: calc(80px + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+    gap: var(--space-2xl);
+    padding: calc(80px + var(--space-2xl)) var(--space-lg) var(--space-xl);
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -205,6 +205,7 @@ a:hover {
 
 .hero-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-md);
     margin-bottom: var(--space-2xl);
 }
@@ -354,6 +355,7 @@ a:hover {
    ============================================ */
 section {
     padding: var(--space-3xl) 0;
+    scroll-margin-top: 88px;
 }
 
 .page-content {
@@ -800,7 +802,16 @@ section {
 .path-section {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+}
+
+.path-header {
+    margin-bottom: var(--space-xl);
+}
+
+.path-header .section-description {
+    margin-bottom: 0;
 }
 
 .path-cards {
@@ -808,6 +819,8 @@ section {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     margin-bottom: var(--space-lg);
+    padding-top: var(--space-md);
+    align-items: stretch;
 }
 
 .path-card {
@@ -816,12 +829,15 @@ section {
     border: 2px solid var(--border-color);
     border-radius: var(--border-radius-lg);
     padding: var(--space-xl);
+    padding-top: calc(var(--space-xl) + var(--space-sm));
     cursor: pointer;
     transition: all var(--transition-base);
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    min-height: 300px;
+    overflow: visible;
 }
 
 .path-card:hover {
@@ -931,15 +947,19 @@ section {
 [data-path="advanced"].active .path-features li::before { color: var(--accent-primary); }
 
 .path-btn {
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--border-radius-sm);
-    padding: var(--space-sm) var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
     transition: all var(--transition-fast);
     font-family: var(--font-sans);
-    align-self: flex-start;
+    align-self: stretch;
+    margin-top: auto;
+    text-align: center;
+    background: transparent;
+    color: inherit;
 }
 
 .path-btn-beginner {
@@ -994,11 +1014,12 @@ section {
    ============================================ */
 .path-guidance-section {
     padding: 0;
+    margin-top: var(--space-xl);
 }
 
 .path-guidance-panel {
-    padding: var(--space-2xl) 0;
-    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-xl) 0 0;
+    border-top: 1px solid var(--border-color);
     animation: fadeSlideIn var(--transition-slow) ease;
 }
 
@@ -1343,6 +1364,19 @@ section {
 /* ============================================
    Responsive — Path Section
    ============================================ */
+@media (max-width: 1024px) {
+    .path-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .path-card[data-path="advanced"] {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        justify-self: center;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .path-cards {
         grid-template-columns: 1fr;

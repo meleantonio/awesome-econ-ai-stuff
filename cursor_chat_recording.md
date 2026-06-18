@@ -166,3 +166,16 @@ Assistant actions:
 - Rewrote `assets/js/main.js` with path selection system (`applyPath`, `localStorage` persistence, skill card state management, download-all button wiring across multiple panels).
 - Branch: `cursor/expertise-path-redesign-ac50`.
 
+## 2026-06-18 (Fix path section visualization on live site)
+
+User request:
+- Fix the path section on https://meleantonio.github.io/awesome-econ-ai-stuff/ — not correctly visualised.
+
+Assistant actions:
+- Reduced hero from `min-height: 100vh` to auto so path cards appear without scrolling past a full viewport.
+- Moved path guidance panels inside the path section; removed nested `.container` wrappers.
+- Polished path cards: equal heights, full-width buttons, badge overflow padding, tablet 2-column grid.
+- Changed primary hero CTA to "Find Your Path" linking to `#choose-path`.
+- Excluded `_skills/SKILL_TEMPLATE.md` from Jekyll build (removed phantom `skill-name` card).
+- Branch: `cursor/fix-path-visualization-ac50`.
+
