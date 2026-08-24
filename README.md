@@ -77,6 +77,7 @@ Skills are organized by research workflow stage:
 ### 🔬 Econometric Analysis
 - [r-econometrics](_skills/analysis/r-econometrics/) - Run IV, DiD, RDD in R
 - [python-panel-data](_skills/analysis/python-panel-data/) - Panel data analysis with Python
+- [panel-balance](https://github.com/meleantonio/panel-balance) - CLI and GitHub Action: check whether a unit×time CSV is a balanced panel (stdlib, personal tool)
 - [stata-regression](_skills/analysis/stata-regression/) - Regression analysis in Stata
 
 ### 📝 Academic Writing
